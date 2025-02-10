@@ -1,51 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title> HTML Login form </title>
-  <link type="text/css" rel="stylesheet" href="stylesheet.css">
+  <title>HTML Login Form </title>
+  <meta name="author" content="Thuy Tran NGUYEN - Hamshigaa JEKUMAR - Elsa Sanchez" />
+  <meta name="description" content="Une page web d'agence de voyage au Japon en automne pour 10 jours." />
+
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap'><link rel="stylesheet" href="./style.css">
 </head>
-
+  
 <body>
-  <h1> MOMIJI Travel 紅葉 </h1>
+<!--login form code-->
+  <h1> 紅葉 MOMIJI Travel  </h1>
   <div class="wrap">
-    <div class="login_box">
-      <div class="login-header">
-        <span>LOGIN</span>
-      </div>
-
-      <div class="input_box">
-        <label for="first"> Username </label>
-        <input type="text" id="first" name="first"
-        placeholder="Enter your username" required>
-      </div>
-      
-      <div class="input_box">
-        <label for="password"> Password </label>
-        <input type="password" id="password" name="password"
-        placeholder="Enter your password" required>
-      </div>
-      
-      <div class="remember-forgot">
-        <div class="remember-me">
-          <label for="remember"> Remember me</label>
-          <input type="=checkbox" id="remember">
-        </div>
-        
-        <div class="forgot">
-          <a href="#"> Forgot password</a>
-        </div>
-      </div>
-      
-    
-
-    <div class="wrap">
-      <button type="Sign in"> Sign In </button>
+  <div class="login_box">
+    <div class="login-header">
+      <span>Login</span>
     </div>
 
-  <div class="sign_up">
-    <p> Don't have an account? <a href="#"> Sign up </a></p>
+    <div class="input_box">
+      <input type="text" id="user" class="input-field" required>
+      <label for="user" class="label">Username</label>
+      <i class="bx bx-user icon"></i>
+    </div>
+
+    <div class="input_box">
+      <input type="password" id="pass" class="input-field" required>
+      <label for="pass" class="label">Password</label>
+      <i class="bx bx-lock-alt icon"></i>
+    </div>
+
+    <div class="remember-forgot">
+      <div class="remember-me">
+        <input type="checkbox" id="remember">
+        <label for="remember">Remember me</label>
+      </div>
+
+      <div class="forgot">
+        <a href="#">Forgot password?</a>
+      </div>
+    </div>
+
+    <div class="input_box">
+      <input type="submit" class="input-submit" value="Login">
+    </div>
+
+    <div class="register">
+      <p>Don't have an account? <a href="#">Sign up</a></p>
+    </div>
   </div>
-</div>
+</div>  
 </body>
 </html>
