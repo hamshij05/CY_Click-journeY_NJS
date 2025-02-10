@@ -37,12 +37,22 @@
         <section class="search-section">
             <form class="search-form">
                 <div class="form-group">
-                    <label for="region">Région du Japon :</label>
+                    <label for="region"> 2 Régions du Japon à Voyager :</label>
                     <select id="region" name="region" required>
-                        <option value="">Choisir une région</option>
-                        <option value="kanto">Kantō (Tokyo et alentours)</option>
-                        <option value="kansai">Kansai (Kyoto, Osaka, Nara, Kobe)</option>
-                        <option value="tohoku">Tōhoku (Nord du Japon, nature et paysages grandioses)</option>
+                        <option value="">Choisir les 2 régions</option>
+                        <option value="kanto-kansai">Kantō (Tokyo et alentours) - Kansai (Kyoto, Osaka, Nara, Kobe)</option>
+                        <option value="kanto-tohoku">Kantō (Tokyo et alentours) - Tōhoku (Nord du Japon, nature et paysages grandioses)</option>
+                        <option value="kansai-tohoku">Kansai (Kyoto, Osaka, Nara, Kobe) - Tōhoku (Nord du Japon, nature et paysages grandioses)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="theme"> Thème du Voyage :</label>
+                    <select id="theme" name="theme" required>
+                        <option value="">Choisir le thème</option>
+                        <option value="culture">Culture & Temples</option>
+                        <option value="food">Gastronomique & Traditionnel</option>
+                        <option value="detente">Détente & Bien-être</option>
                     </select>
                 </div>
 
