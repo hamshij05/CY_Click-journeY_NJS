@@ -60,15 +60,15 @@
         </section>
 
         <section class="about-content">
-	        <section class="search-section">
-                <form class="search-form">
+	        <section class="search-section" >
+                <form class="search-form" action="tour.html" method="get">
                     <div class="form-group">
-                        <label for="region">Thème du Voyage :</label>
-                        <select id="region" name="region" required>
+                        <label for="theme">Thème du Voyage :</label>
+                        <select id="theme" name="theme" required onchange="this.form.action = 'tour.html#' + this.value;">
                             <option value="">Choisir un thème</option>
-                            <option value="culture_temples">Culture & Temples </option>
-                            <option value="gastronomique_traditionnel">Gastronomique & Traditionnel</option>
-                            <option value="detente_bien-etre">Détente & Bien-être </option>
+                            <option value="culture">Culture & Temples </option>
+                            <option value="food">Gastronomique & Traditionnel</option>
+                            <option value="detente">Détente & Bien-être </option>
                         </select>
                     </div>
                 <button type="submit" class="btn btn-search">Rechercher</button>
