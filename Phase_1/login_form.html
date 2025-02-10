@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" >
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>HTML Login Form </title>
@@ -7,14 +7,18 @@
   <meta name="description" content="Une page web d'agence de voyage au Japon en automne pour 10 jours." />
 
   <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap'><link rel="stylesheet" href="./style.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap'><link rel="stylesheet" href="assets/css/styles.css">
+
 </head>
   
 <body>
 <!--login form code-->
-  <header>
-      <h1 style="text-align:center;color:white;font-family:Noto Sans JP"> 紅葉 MOMIJI Travel </h1>
+
+  <header>	
+  <h1> 紅葉 MOMIJI Travel  </h1>
   </header>
+
+<section class = "background">
   <div class="wrap">
   <div class="login_box">
     <div class="login-header">
@@ -23,35 +27,36 @@
 
     <div class="input_box">
       <input type="text" id="user" class="input-field" required>
-      <label for="user" class="label">Identifiant</label>
+      <label for="user" class="label">Username</label>
       <i class="bx bx-user icon"></i>
     </div>
 
     <div class="input_box">
       <input type="password" id="pass" class="input-field" required>
-      <label for="pass" class="label">Mot de passe</label>
+      <label for="pass" class="label">Password</label>
       <i class="bx bx-lock-alt icon"></i>
     </div>
 
     <div class="remember-forgot">
       <div class="remember-me">
         <input type="checkbox" id="remember">
-        <label for="remember">Se souvenir de moi</label>
+        <label for="remember">Remember me</label>
       </div>
 
       <div class="forgot">
-        <a href="#">Mot de passe oublié?</a>
+        <a href="#">Forgot password?</a>
       </div>
     </div>
 
     <div class="input_box">
-      <input type="submit" class="input-submit" value="Se connecter">
+      <input type="submit" class="input-submit" value="Login">
     </div>
 
     <div class="register">
-      <p>Vous n'avez pas de compte? <a href="#">Créer un compte</a></p>
+      <p>Don't have an account? <a href="#">Sign up</a></p>
     </div>
   </div>
-</div>  
+</div>
+</section>  
 </body>
 </html>
