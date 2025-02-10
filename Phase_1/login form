@@ -6,26 +6,45 @@
 </head>
 
 <body>
-<div class="main">
-  <!--login form code-->
   <h1> MOMIJI Travel 紅葉 </h1>
-  <form action=""> 
-    <label for="first"> Username </label>
-      <input type="text" id="first" name="first"
-    placeholder="Enter your username" required>
+  <div class="wrap">
+    <div class="login_box">
+      <div class="login-header">
+        <span>LOGIN</span>
+      </div>
 
-    <label for="password"> Password </label>
-      <input type="password" id="password" name="password"
-    placeholder="Enter your password" required>
+      <div class="input_box">
+        <label for="first"> Username </label>
+        <input type="text" id="first" name="first"
+        placeholder="Enter your username" required>
+      </div>
+      
+      <div class="input_box">
+        <label for="password"> Password </label>
+        <input type="password" id="password" name="password"
+        placeholder="Enter your password" required>
+      </div>
+      
+      <div class="remember-forgot">
+        <div class="remember-me">
+          <label for="remember"> Remember me</label>
+          <input type="=checkbox" id="remember">
+        </div>
+        
+        <div class="forgot">
+          <a href="#"> Forgot password</a>
+        </div>
+      </div>
+      
+    
 
     <div class="wrap">
       <button type="Sign in"> Sign In </button>
     </div>
-  </form>
 
-  <p> Don't have an account?
-    <a href="#"> Sign up </a>
-  </p>
+  <div class="sign_up">
+    <p> Don't have an account? <a href="#"> Sign up </a></p>
+  </div>
 </div>
 </body>
 </html>
