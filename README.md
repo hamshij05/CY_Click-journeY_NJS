@@ -7,7 +7,7 @@
 ## Sommaire
 1. [Description du projet](#description-du-projet)
 2. [Structure](#structure)
-3. [STechnologies utilisées](#technologies-utilisées)
+3. [Technologies utilisées](#technologies-utilisées)
 4. [Installation](#installation)
 5. [Utilisation](#utilisation)
 6. [Auteurs](#auteurs)
