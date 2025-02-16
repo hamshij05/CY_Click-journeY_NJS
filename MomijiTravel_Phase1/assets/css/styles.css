@@ -608,4 +608,139 @@ a:hover {
     outline-offset: 2px;
 }
 
+/*page admin */
+:*après global styles*/
+/* Menu latéral */
+.menu {
+  min-height: 100vh;
+  width: 290px;
+  background-color: var(--momiji-red);
+  position: absolute;
+  top: 0px;
+  left: 00;
+  box-shadow: 1px 1px 10px rgba(198, 189, 248, 0.825);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+  padding: 30px 0 20px 10px;
+}
 
+.menucontainer {
+  height: calc(100vh - 70px);
+  width: 250px;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;  
+  transition: all 0.5s ease-in-out;
+}
+
+.menucontainer::-webkit-scrollbar {
+  display: none;
+}
+.menuclose {
+  width: 80px;
+}
+.menu-option {
+  width: 250px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 30px 0 20px;
+  gap: 20px;
+  transition: all 0.1s ease-in-out;
+}
+.menu-option:hover {
+  border-left: 5px solid #a2a2a2;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.menu-img {
+  height: 30px;
+}
+
+.menu-upper-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.option1 {
+  border-left: 5px solid #010058af;
+  background-color: var(--momiji-red);
+  color: white;
+  cursor: pointer;
+}
+.option1:hover {
+  border-left: 5px solid #010058af;
+  background-color: var(--momiji-red);
+}
+
+/*La partie de la table */
+.admin-table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  margin: 25px 0;
+  background: var(--zen-gray);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.admin-table thead tr {
+  background-color: var(--maple-orange);
+  color: var(--second-color);
+  text-align: left;
+}
+.admin-table th, .admin-table td {
+  padding: 12px 15px;
+}
+.admin-table tbody tr {
+    border-bottom: 5px solid (--second-color);
+}
+
+.admin-table tbody tr:nth-of-type(even) {
+    background: var(--cream);
+}
+.admin-table tbody tr:nth-of-type(odd) {
+    background: var(--paper-white);
+}
+
+.admin-table tbody tr:last-of-type {
+    border-bottom: 10px solid (--second-color);
+}
+.table_button div {
+    display: flex;
+    flex-direction: column;
+}
+
+.table_button{
+    align-items: center;
+}
+
+/*Style des buttons*/
+.admin-table button {
+    background-color: var(--maple-orange);
+    border: none;
+    color: white;
+    padding: 10px; 
+    text-align: center; 
+    text-decoration: none;
+    font-size: 20px; 
+    margin: 4px 2px; 
+    cursor: pointer;
+    border-radius: 12px; 
+    transition: all 0.3s;
+    font-family: Poppins, sans-serif;
+}
+
+.admin-table button:hover {
+    background-color: var(--authum-gold);
+    color: var(--maple-orange);
+    transform: scale(1.1);
+}
+
+.table_button button{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    color: white;    
+}
