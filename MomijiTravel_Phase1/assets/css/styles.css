@@ -10,6 +10,7 @@
     --primary-color: #C6C3C3;
     --second-color: #FFFFFF;
     --black-color: #000000;
+    --dark-black: #121212
 }
 
 /* Global Styles */
@@ -28,10 +29,11 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--paper-white);
-    color: var(--zen-gray);
+    color: var(--cream);
     line-height: 1.6;
 }
+
+
 
 /* Header Styles */
 header {
@@ -52,12 +54,16 @@ header h1 {
 
 /* Navigation */
 nav {
+    width: 100vw;  /* Utilise toute la largeur de la fenêtre */
+    margin: 0.5rem 0;  /* Supprime la marge auto horizontale */
     padding: 1rem 0;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    margin: 0.5rem auto;
-    max-width: 600px;
     text-align: center;
+    box-sizing: border-box; /* Inclut padding dans la largeur */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 nav a {
@@ -76,7 +82,7 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* Hero Section */
+/* Hero Section : important partie */
 .page-hero {
     text-align: center;
     padding: 8rem 2rem;
@@ -141,7 +147,8 @@ nav a:hover {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-    background-color: white;
+
+    background-color: var(--dark-black);
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
@@ -153,16 +160,19 @@ nav a:hover {
 label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--zen-gray);
+    color: var(--cream);
     font-weight: 500;
+
 }
 
 input, select {
     width: 100%;
     padding: 0.8rem;
-    border: 2px solid #ddd;
+    border: 2px solid var(--maple-orange);
+    background-color: var(--dark-black);
     border-radius: 6px;
     font-size: 1rem;
+    color: var(--cream);
     transition: border-color 0.3s ease;
 }
 
@@ -171,16 +181,19 @@ input:focus, select:focus {
     outline: none;
 }
 
+
 /* Feature Grid */
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     padding: 2rem;
+    color:  var(--cream);
+  
 }
 
 .feature-card {
-    background-color: white;
+    background-color: var(--dark-black);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -196,6 +209,8 @@ input:focus, select:focus {
     margin-bottom: 1rem;
 }
 
+
+
 /* Tour Grid */
 .tour-grid {
     display: grid;
@@ -205,7 +220,7 @@ input:focus, select:focus {
 }
 
 .tour-card {
-    background-color: white;
+    background-color: var(--dark-black);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -244,7 +259,7 @@ input:focus, select:focus {
 }
 
 .about-text {
-    background-color: white;
+    background-color: var(--dark-black);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -257,9 +272,10 @@ input:focus, select:focus {
 
 /* Journey Highlights */
 .journey-highlights {
-    background-color: var(--cream);
+    background-color: var(--dark-black);
     padding: 4rem 2rem;
     margin-top: 4rem;
+
 }
 
 .highlights-list {
@@ -287,7 +303,7 @@ section h3 {
     text-align: center;
     font-size: 2rem;
     margin: 2rem 0;
-    color: var(--zen-gray);
+    color: var(--paper-white);
 }
 
 /* Footer */
@@ -393,7 +409,7 @@ main {
 
 a {
   text-decoration: none;
-  color: var(--second-color);
+  color: var(--paper-white);
 }
 
 a:hover {
@@ -414,10 +430,10 @@ a:hover {
   width: 450px;
   padding: 7.5em 1.5em 4em 1.5em;
   backdrop-filter: blur(25px);
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--zen-gray);
   border-radius: 15px;
   padding: 7.5em 2.5em 4em 2.5em;
-  color: var(--second-color);
+  color: var(--cream);
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -430,15 +446,15 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--primary-color);
-  width: 190px;
+  background-color: var(--zen-gray);
+  width: 140px;
   height: 70px;
   border-radius: 0 0 20px 20px;
 }
 
 .login-header span {
   font-size: 30px;
-  color: var(--black-color);
+  color: var(--cream);
 }
 
 .login-header::before {
@@ -450,7 +466,7 @@ a:hover {
   height: 30px;
   border-top-right-radius: 50%;
   background: transparent;
-  box-shadow: 15px 0 0 0 var(--primary-color);
+  box-shadow: 15px 0 0 0 var(--zen-gray);
 }
 
 .login-header::after {
@@ -462,65 +478,9 @@ a:hover {
   height: 30px;
   border-top-left-radius: 50%;
   background: transparent;
-  box-shadow: -15px 0 0 0 var(--primary-color); /* Removed space before --primary-color */
+  box-shadow: -15px 0 0 0 var(--zen-gray); /* Removed space before "connexion" */
 }
 
-.title-header {
-  position: absolute;
-  top: -80px; /* Ajuste selon le besoin */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--primary-color);
-  width: 200px; /* Ajuste selon la taille du texte */
-  height: 70px;
-  border-radius: 0 0 20px 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--black-color);
-}
-
-.title-header {
-  position: absolute;
-  top: -80px; /* Ajuste selon le besoin */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--primary-color);
-  width: 200px; /* Ajuste selon la taille du texte */
-  height: 70px;
-  border-radius: 0 0 20px 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--black-color);
-}
-
-/* Ajout des effets arrondis comme dans .login-header */
-.title-header::before,
-.title-header::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-}
-
-.title-header::before {
-  left: -30px;
-  border-top-right-radius: 50%;
-  box-shadow: 15px 0 0 0 var(--primary-color);
-}
-
-.title-header::after {
-  right: -30px;
-  border-top-left-radius: 50%;
-  box-shadow: -15px 0 0 0 var(--primary-color);
-}
 
 .input_box {
   position: relative;
@@ -559,11 +519,11 @@ a:hover {
   top: -10px;
   left: 20px;
   font-size: 14px;
-  background-color: var(--primary-color);
+  background-color: var(--paper-white);
   border-radius: 30px;
   color: var(--black-color);
   padding: 0 10px;
-} /* Closed the missing brace */
+} 
 
 .icon {
   position: absolute;
@@ -581,7 +541,7 @@ a:hover {
 .input-submit {
   width: 100%;
   height: 50px;
-  background: #ececec;
+  background: var(--zen-gray);
   font-size: 16px;
   font-weight: 500;
   border: none;
@@ -591,7 +551,7 @@ a:hover {
 }
 
 .input-submit:hover {
-  background: var(--second-color);
+  background: var(--);
 }
 
 .register {
@@ -608,139 +568,4 @@ a:hover {
     outline-offset: 2px;
 }
 
-/*page admin */
-:*après global styles*/
-/* Menu latéral */
-.menu {
-  min-height: 100vh;
-  width: 290px;
-  background-color: var(--momiji-red);
-  position: absolute;
-  top: 0px;
-  left: 00;
-  box-shadow: 1px 1px 10px rgba(198, 189, 248, 0.825);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: auto;
-  padding: 30px 0 20px 10px;
-}
 
-.menucontainer {
-  height: calc(100vh - 70px);
-  width: 250px;
-  position: relative;
-  overflow-y: scroll;
-  overflow-x: hidden;  
-  transition: all 0.5s ease-in-out;
-}
-
-.menucontainer::-webkit-scrollbar {
-  display: none;
-}
-.menuclose {
-  width: 80px;
-}
-.menu-option {
-  width: 250px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  padding: 0 30px 0 20px;
-  gap: 20px;
-  transition: all 0.1s ease-in-out;
-}
-.menu-option:hover {
-  border-left: 5px solid #a2a2a2;
-  background-color: #ffffff;
-  cursor: pointer;
-}
-.menu-img {
-  height: 30px;
-}
-
-.menu-upper-options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
-.option1 {
-  border-left: 5px solid #010058af;
-  background-color: var(--momiji-red);
-  color: white;
-  cursor: pointer;
-}
-.option1:hover {
-  border-left: 5px solid #010058af;
-  background-color: var(--momiji-red);
-}
-
-/*La partie de la table */
-.admin-table {
-  width: 100%;
-  max-width: 900px;
-  border-collapse: collapse;
-  margin: 25px 0;
-  background: var(--zen-gray);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-.admin-table thead tr {
-  background-color: var(--maple-orange);
-  color: var(--second-color);
-  text-align: left;
-}
-.admin-table th, .admin-table td {
-  padding: 12px 15px;
-}
-.admin-table tbody tr {
-    border-bottom: 5px solid (--second-color);
-}
-
-.admin-table tbody tr:nth-of-type(even) {
-    background: var(--cream);
-}
-.admin-table tbody tr:nth-of-type(odd) {
-    background: var(--paper-white);
-}
-
-.admin-table tbody tr:last-of-type {
-    border-bottom: 10px solid (--second-color);
-}
-.table_button div {
-    display: flex;
-    flex-direction: column;
-}
-
-.table_button{
-    align-items: center;
-}
-
-/*Style des buttons*/
-.admin-table button {
-    background-color: var(--maple-orange);
-    border: none;
-    color: white;
-    padding: 10px; 
-    text-align: center; 
-    text-decoration: none;
-    font-size: 20px; 
-    margin: 4px 2px; 
-    cursor: pointer;
-    border-radius: 12px; 
-    transition: all 0.3s;
-    font-family: Poppins, sans-serif;
-}
-
-.admin-table button:hover {
-    background-color: var(--authum-gold);
-    color: var(--maple-orange);
-    transform: scale(1.1);
-}
-
-.table_button button{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center; 
-    color: white;    
-}
