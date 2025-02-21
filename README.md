@@ -3,7 +3,7 @@
 
 ### ***Projet-semestre2 - PréIng2***
 ## **Bienvenue dans notre programme**
-## **************CY_Click-journeY-MOMIJI Travel**************
+## **************MOMIJI Travel**************
 
 
 ## Sommaire
