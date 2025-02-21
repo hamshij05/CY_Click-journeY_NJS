@@ -24,9 +24,9 @@ Le projet est divisé en plusieurs phases :
 
 ## Technologies utilisées    
 **Phase 1** : 
-Frontend : HTML, CSS, JavaScript
-Backend : PHP, MySQL
-Versionnement : GitHub
+Frontend : HTML, CSS, JavaScript  
+Backend : PHP, MySQL  
+Versionnement : GitHub  
 
 ## Installation   
 Le projet
