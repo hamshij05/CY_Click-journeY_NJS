@@ -44,7 +44,7 @@ Versionnement : GitHub
 
 ## Installation   
 1. Télécharger le fichier ZIP du projet depuis GitHub. Pour télécharger et installer, suivez ces étapes :
-2. Extraire le contenu du fichier ZIP dans un dossier de votre choix (de préférence page-accueil)
+2. Extraire le contenu du fichier ZIP dans un dossier de votre choix (de préférence présentation)
 Extraire le contenu du fichier ZIP dans un dossier de votre choix.
 
 ## Fonctionnalités du site     
