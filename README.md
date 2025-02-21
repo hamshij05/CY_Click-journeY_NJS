@@ -7,7 +7,7 @@
 ## Sommaire
 1. [Description du projet](#description-du-projet)
 2. [Structure](#structure)
-3. [Technologies utilisées](#technologies-utilisées)
+3. [Langages](#langages)
 4. [Installation](#installation)
 5. [Utilisation](#utilisation)
 6. [Auteurs](#auteurs)
@@ -22,8 +22,11 @@ Le projet est divisé en plusieurs phases :
 3. **Phase 3** : Ajout des fonctionnalités interactives avec JavaScript
 4. **Phase 4** : Requêtes asynchrones pour optimiser l’expérience utilisateur  
 
-## Technologies utilisées    
+## Langages    
 **Phase 1** : 
+[HTML]: https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[HTML-url]: https://developer.mozilla.org/fr/docs/Web/HTML
+
 Frontend : HTML, CSS, JavaScript  
 Backend : PHP, MySQL  
 Versionnement : GitHub  
