@@ -43,8 +43,9 @@ Backend : PHP, MySQL
 Versionnement : GitHub  
 
 ## Installation   
-1. Télécharger le zip de cette page. Pour télécharger et installer, suivez ces étapes :  
-1. 
+1. Télécharger le fichier ZIP du projet depuis GitHub. Pour télécharger et installer, suivez ces étapes :
+2. Extraire le contenu du fichier ZIP dans un dossier de votre choix (de préférence page-accueil)
+Extraire le contenu du fichier ZIP dans un dossier de votre choix.
 
 ## Fonctionnalités du site     
 Le projet
