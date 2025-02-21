@@ -13,7 +13,7 @@
 6. [Auteurs](#auteurs)
 
 ## Description du projet     
-Le projet "Click-journeyY est un site web d'agence permettant aux utilisateurs de réserver des séjours préconfigurés. Les clients peuvent choisir parmi des circuits prédéfinis et personnaliser certaines options comme l’hébergement, la restauration, les activités et les transports.
+Le projet "Click-journeY est un site web d'agence permettant aux utilisateurs de réserver des séjours préconfigurés. Les clients peuvent choisir parmi des circuits prédéfinis et personnaliser certaines options comme l’hébergement, la restauration, les activités et les transports.
 
 ## Structure  
 Le projet est divisé en plusieurs phases : 
