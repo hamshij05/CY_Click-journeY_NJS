@@ -11,7 +11,7 @@
 2. [Structure](#structure)
 3. [Langages](#langages)
 4. [Installation](#installation)
-5. [Utilisation](#utilisation)
+5. [Fonctionnalités du site](#fonctionnalités-du-site)
 6. [Auteurs](#auteurs)
 
 ## Description du projet     
@@ -43,10 +43,10 @@ Backend : PHP, MySQL
 Versionnement : GitHub  
 
 ## Installation   
-Pour télécharger et installer, suivez ces étapes :  
+1. Télécharger le zip de cette page. Pour télécharger et installer, suivez ces étapes :  
 1. 
 
-## Utilisation    
+## Fonctionnalités du site     
 Le projet
 
 ## Auteurs    
