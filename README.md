@@ -26,12 +26,14 @@ Le projet est divisé en plusieurs phases :
 **Phase 1** :  
 [HTML]: https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white  
 [HTML-url]: https://developer.mozilla.org/fr/docs/Web/HTML  
+
 [![HTML][HTML]][HTML-url]  
 
 [css]: https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white&color=blue
 [css-url]: https://developer.mozilla.org/fr/docs/Web/CSS/Reference
 
 [![css][css]][css-url]  
+
 Frontend : HTML, CSS, JavaScript  
 Backend : PHP, MySQL  
 Versionnement : GitHub  
