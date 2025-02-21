@@ -7,9 +7,6 @@
     --cream: #FAF3E0;
     --zen-gray: #2C2C2C;
     --paper-white: #F8F4E9;
-    --primary-color: #C6C3C3;
-    --second-color: #FFFFFF;
-    --black-color: #000000;
     --dark-black: #121212
 }
 
@@ -564,9 +561,9 @@ a:hover {
   height: 55px;
   font-size: 16px;
   background: transparent;
-  color: var(--second-color);
+  color: var(--paper-white);
   padding-inline: 20px 50px;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--cream);
   border-radius: 30px;
   outline: none;
 }
@@ -593,7 +590,7 @@ a:hover {
   font-size: 14px;
   background-color: var(--paper-white);
   border-radius: 30px;
-  color: var(--black-color);
+  color: var(--dark-black);
   padding: 0 10px;
 } 
 
