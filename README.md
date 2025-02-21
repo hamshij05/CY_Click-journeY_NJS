@@ -23,9 +23,10 @@ Le projet est divisé en plusieurs phases :
 4. **Phase 4** : Requêtes asynchrones pour optimiser l’expérience utilisateur  
 
 ## Langages    
-**Phase 1** : 
+**Phase 1** :  
 [HTML]: https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [HTML-url]: https://developer.mozilla.org/fr/docs/Web/HTML
+[![HTML][HTML]][HTML-url]
 
 Frontend : HTML, CSS, JavaScript  
 Backend : PHP, MySQL  
