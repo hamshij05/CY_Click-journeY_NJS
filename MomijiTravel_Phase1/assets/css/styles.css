@@ -44,6 +44,7 @@ header {
 
 header h1 {
     color: var(--cream);
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 2.5rem;
     margin: 0;
     padding: 0.5rem 0;
@@ -58,7 +59,7 @@ nav {
     margin: 0.5rem 0;  /* Supprime la marge auto horizontale */
     padding: 1rem 0;
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 30px;
     text-align: center;
     box-sizing: border-box; /* Inclut padding dans la largeur */
     position: relative;
@@ -70,9 +71,10 @@ nav a {
     color: var(--cream);
     margin: 0 1.5rem;
     text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
+    border-radius: 10px;
     transition: all 0.3s ease;
     display: inline-block;
 }
@@ -81,6 +83,8 @@ nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
+
+
 
 /* Hero Section : important partie */
 .page-hero {
@@ -98,23 +102,27 @@ nav a:hover {
 
 .page-hero h2 {
     font-size: 3.5rem;
+    font-family: 'Noto Sans JP', sans-serif;
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .page-hero p {
     font-size: 1.4rem;
+    font-family: 'Noto Sans JP', sans-serif;
     max-width: 800px;
     margin: 0 auto 2rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+
+
 /* Button Styles */
 .btn {
     background-color: var(--maple-orange);
     color: var(--cream);
+    font-family: 'Noto Sans JP', sans-serif;
     padding: 1rem 2rem;
-    text-decoration: none;
     border-radius: 50px;
     font-size: 1.2rem;
     font-weight: 600;
@@ -142,18 +150,22 @@ nav a:hover {
     color: var(--momiji-red);
 }
 
+
+
 /* Form Styles */
 .search-form {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-
-    background-color: var(--dark-black);
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.9); 
+    background-blend-mode: darken;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .form-group {
+
     margin-bottom: 1.5rem;
 }
 
@@ -163,23 +175,26 @@ label {
     color: var(--cream);
     font-weight: 500;
 
+
 }
 
 input, select {
     width: 100%;
     padding: 0.8rem;
     border: 2px solid var(--maple-orange);
-    background-color: var(--dark-black);
     border-radius: 6px;
     font-size: 1rem;
     color: var(--cream);
     transition: border-color 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.9); 
+    background-blend-mode: darken;
 }
 
 input:focus, select:focus {
     border-color: var(--maple-orange);
     outline: none;
 }
+
 
 
 /* Feature Grid */
@@ -189,43 +204,60 @@ input:focus, select:focus {
     gap: 2rem;
     padding: 2rem;
     color:  var(--cream);
-  
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
+
 .feature-card {
-    background-color: var(--dark-black);
     padding: 2rem;
+    font-family: 'Noto Sans JP', sans-serif;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.8); 
+    background-blend-mode: darken;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
 }
 
+.feature-card h3 {
+
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--momiji-red);
+    margin-bottom: 1rem;
+}
+
 .feature-card h4 {
+    font-family: 'Noto Sans JP', sans-serif;
     color: var(--momiji-red);
     margin-bottom: 1rem;
 }
 
 
 
+
+
 /* Tour Grid */
 .tour-grid {
     display: grid;
+    font-family: 'Noto Sans JP', sans-serif;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     padding: 2rem;
 }
 
 .tour-card {
-    background-color: var(--dark-black);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-position: center;     					  
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.8); 
+    background-blend-mode: darken;
 }
 
 .tour-card:hover {
@@ -233,11 +265,13 @@ input:focus, select:focus {
 }
 
 .tour-card h4 {
+    font-family: 'Noto Sans JP', sans-serif;
     color: var(--momiji-red);
     margin-bottom: 1rem;
 }
 
 .price {
+    font-family: 'Noto Sans JP', sans-serif;
     display: block;
     color: var(--maple-orange);
     font-weight: 700;
@@ -245,36 +279,18 @@ input:focus, select:focus {
     margin-top: 1rem;
 }
 
-/* About Section */
-.about-content {
-    padding: 4rem 2rem;
-}
 
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
-.about-text {
-    background-color: var(--dark-black);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.about-text h3 {
-    color: var(--momiji-red);
-    margin-bottom: 1rem;
-}
 
 /* Journey Highlights */
 .journey-highlights {
-    background-color: var(--dark-black);
+    font-family: 'Noto Sans JP', sans-serif;
     padding: 4rem 2rem;
     margin-top: 4rem;
+    background-position: center;     					  
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.8); 
+    background-blend-mode: darken;
 
 }
 
@@ -285,6 +301,7 @@ input:focus, select:focus {
 }
 
 .highlights-list li {
+    font-family: 'Noto Sans JP', sans-serif;
     padding: 1rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     position: relative;
@@ -300,6 +317,7 @@ input:focus, select:focus {
 
 /* Section Headers */
 section h3 {
+    font-family: 'Noto Sans JP', sans-serif;
     text-align: center;
     font-size: 2rem;
     margin: 2rem 0;
@@ -308,6 +326,7 @@ section h3 {
 
 /* Footer */
 footer {
+    font-family: 'Noto Sans JP', sans-serif;
     background-color: var(--zen-gray);
     color: var(--cream);
     text-align: center;
@@ -389,7 +408,7 @@ main {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 
@@ -409,6 +428,7 @@ main {
 
 a {
   text-decoration: none;
+  font-family: 'Noto Sans JP', sans-serif;
   color: var(--paper-white);
 }
 
@@ -512,7 +532,7 @@ a:hover {
   transition: 0.2s;
 }
 
- /* Added missing closing brace here */
+
 .input-field:focus ~ .label,
 .input-field:valid .label {
   position: absolute;
@@ -534,8 +554,17 @@ a:hover {
 
 .remember-forgot {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
   font-size: 15px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espace entre la case et le texte */
+  align-self: flex-start; 
+white-space: nowrap; 
 }
 
 .input-submit {
@@ -551,11 +580,15 @@ a:hover {
 }
 
 .input-submit:hover {
-  background: var(--);
+  background: var(--dark-black);
+  outline: 2px solid var(--maple-orange); 
+
 }
+
 
 .register {
   text-align: center;
+
 }
 
 .register a {
@@ -566,6 +599,7 @@ a:hover {
 :focus {
     outline: 3px solid var(--autumn-gold);
     outline-offset: 2px;
+    border-radius:4px;
 }
 
 
