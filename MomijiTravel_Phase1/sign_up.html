@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" >
+
+<!--description part-->
 <head>
   <meta charset="UTF-8">
   <title>HTML Sign up Form </title>
@@ -7,7 +9,8 @@
   <meta name="description" content="Une page web d'agence de voyage au Japon en automne pour 10 jours." />
 
   <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap'><link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
 
 </head>
   
@@ -16,6 +19,8 @@
 
   <header>	
   <h1 style="text-align:center"> 紅葉 Momiji Travel  </h1>
+
+	<!--navigation part to navigate through different pages-->
         <nav>
 	    <a href="index.html">Accueil</a>
             <a href="presentation.html">Présentation</a>
@@ -26,17 +31,17 @@
   </header>
 
     <main>
-<section class = "background">
-  <div class="wrap">
-  <div class="login_box">
-    <div class="login-header">
+<section class = "background"> <!--for the background image-->
+  <div class="wrap"> <!-- container that centers its content both horizontally and vertically on the screen. -->
+  <div class="login_box"> <!--Login box styling with blur effect, border, and shadow-->
+    <div class="login-header"> <!--title of the sign up form-->
       <span>Inscription</span>
     </div>
         
 <div class="input_box">
       <input type="text" id="user" class="input-field" required>
       <label for="user" class="label">Prénom</label>
-      <i class="bx bx-user-circle icon"></i>
+      <i class="bx bx-user-circle icon"></i> <!--each i class bx bx is for a icon that represent the field-->
  </div>
     
  <div class="input_box">
@@ -66,13 +71,13 @@
 
 <form action="index.html" method="get">
   <div class="input_box">
-    <input type="submit" class="input-submit" value="S'inscrire">
+    <input type="submit" class="input-submit" value="S'inscrire"> <!--here is to submit the sign up info-->
   </div>
 </form>
 
     <div class="register">
       <p>Déjà un de compte ? 
-      <a href="login_form.html">Connectez-vous</a></p>   <!--dont forget to put the link hereeeeeee-->
+      <a href="login_form.html">Connectez-vous</a></p>   
     </div>
   </div>
 </div>
