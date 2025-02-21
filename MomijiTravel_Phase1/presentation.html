@@ -2,7 +2,7 @@
 <html lang="fr">
 
 
-
+<!--Description of the page-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +16,7 @@
 <body>
     <header>
         <h1>紅葉 Momiji Travel</h1>
+	<!-- navigation part to navigation through different page-->
         <nav>
             <a href="index.html">Accueil</a>
             <a href="search.html">Rechercher un voyage</a>
@@ -27,7 +28,7 @@
 
 
     <main>
-
+	<!--Most important part of the page-->
         <section class="page-hero">
             <h2>À propos de Momiji Travel</h2>
             <p>Spécialiste des voyages au Japon pendant la saison des érables</p>
@@ -35,6 +36,7 @@
 
         <section class="features">
             <div class="feature-grid">
+		<!--this class is to show info of the page and the description of our service-->
                 <div class="feature-card">
                     <h3>Notre histoire</h3>
                     <p>Momiji Travel est né d'une passion pour le Japon et ses traditions séculaires. 
@@ -51,6 +53,7 @@
 
         <section class="journey-highlights">
             <h3>Points forts de nos circuits</h3>
+	    <!--this class is only used to represente the planning of the travel or in this case, a list of things with its unique design-->
             <ul class="highlights-list">
                 <li>Visite des temples les plus renommés</li>
                 <li>Hébergement en ryokan traditionnel</li>
@@ -61,10 +64,14 @@
         </section>
 
         <section class="features">
+		<!--the class search section and form make it a place to search for a theme of the travel (interraction with the web)-->
 	        <section class="search-section" >
                 <form class="search-form" action="tour.html" method="get">
                     <div class="form-group">
                         <label for="theme">Thème du Voyage :</label>
+
+			<!--the ID is used here so the page know where to send the client on the tour page ( culture part, food part or detente part-->
+ 			<!-- required is to obligate the client before sending the form to choose an option and onchange is to modify dynamically the action attribute-->
                         <select id="theme" name="theme" required onchange="this.form.action = 'tour.html#' + this.value;">
                             <option value="">Choisir un thème</option>
                             <option value="culture">Culture & Temples </option>
@@ -72,7 +79,7 @@
                             <option value="detente">Détente & Bien-être </option>
                         </select>
                     </div>
-                <button type="submit" class="btn btn-search">Rechercher</button>
+                <button type="submit" class="btn btn-search">Rechercher</button> <!-- class to design a dynamic button-->
 	        </form>
 	    </section>
 	</section>
