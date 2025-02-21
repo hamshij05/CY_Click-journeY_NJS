@@ -1,9 +1,9 @@
 # CY_Click-journeY_NJS
 ## **************CY Tech - CY_Click-journeY**************
+## **************CY_Click-journeY-MOMIJI Travel**************
 
 ### ***Projet-semestre2 - PréIng2***
-## **Bienvenue dans notre programme**
-## **************MOMIJI Travel**************
+### **Bienvenue dans notre programme**
 
 
 ## Sommaire
