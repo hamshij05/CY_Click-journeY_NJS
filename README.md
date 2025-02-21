@@ -39,7 +39,8 @@ Backend : PHP, MySQL
 Versionnement : GitHub  
 
 ## Installation   
-Le projet
+Pour télécharger et installer, suivez ces étapes :  
+1. 
 
 ## Utilisation    
 Le projet
