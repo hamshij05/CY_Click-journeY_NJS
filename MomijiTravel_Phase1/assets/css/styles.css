@@ -1,5 +1,5 @@
 
-/* Base styles and variables, Defines CSS variables for a consistent color scheme. */
+/* Base styles and variables */
 :root {
     --momiji-red: #A42020;
     --maple-orange: #D4611D;
@@ -10,14 +10,13 @@
     --dark-black: #121212
 }
 
-/*Resets margin, padding, and applies default styles for all elements. */
+/* Global Styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/*Sets background image, typography, and base text color*/
 body {
     background-image: url("../images/momiji_bg.jpg");
     background-position: center;
@@ -34,15 +33,12 @@ body {
 
 
 /* Header Styles */
-
-/*Styles the page header with a background color and shadow.*/
 header {
     background-color: var(--momiji-red);
     padding: 1.5rem;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-/*Defines the main title with larger font size and spacing.*/
 header h1 {
     color: var(--cream);
     font-family: 'Noto Sans JP', sans-serif;
@@ -54,61 +50,53 @@ header h1 {
     text-align: center;
 }
 
-
-
 /* Navigation */
-
-/* Creates a full-width navigation bar, centered on the page.*/
 nav {
-    width: 100vw;  /* Uses the full width of the window.*/
-    margin: 0.5rem 0;  /* delete horizontal margin*/
+    width: 100vw;  /* Utilise toute la largeur de la fenêtre */
+    margin: 0.5rem 0;  /* Supprime la marge auto horizontale */
     padding: 1rem 0;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 30px;
     text-align: center;
-    box-sizing: border-box; /* Include padding in the define size */
+    box-sizing: border-box; /* Inclut padding dans la largeur */
     position: relative;
     left: 50%;
     transform: translateX(-50%);
 }
 
-
-/*Styles navigation links with padding, hover effects, and transitions.*/
 nav a {
     color: var(--cream);
     margin: 0 1.5rem;
+    text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.1rem;
     padding: 0.5rem 1rem;
-    border-radius: 10px; /*make the border round*/
-    transition: all 0.3s ease; /*make it smooth when there s an action*/
-    display: inline-block; /*make it on the same line*/
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-nav a:hover { /* when the click pass by, the name go up a bit and became a bit opac*/
+nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
 
 
 
-/* Hero Section : important part */
-
-/*Styles the large introductory section with a background image and overlay.*/
+/* Hero Section : important partie */
 .page-hero {
     text-align: center;
     padding: 8rem 2rem;
-    background-image: linear-gradient( /*make it a little opac*/
+    background-image: linear-gradient(
         rgba(0, 0, 0, 0.4),
         rgba(0, 0, 0, 0.4)
     ), url('../images/bg-autumn.jpg');
-    background-size: cover;  /*make the image show correctly*/
+    background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: var(--cream);
 }
 
-/*Sets a large heading with a shadow for readability.*/
 .page-hero h2 {
     font-size: 3.5rem;
     font-family: 'Noto Sans JP', sans-serif;
@@ -116,7 +104,6 @@ nav a:hover { /* when the click pass by, the name go up a bit and became a bit o
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/*Styles the paragraph with a max-width for better readability.*/
 .page-hero p {
     font-size: 1.4rem;
     font-family: 'Noto Sans JP', sans-serif;
@@ -128,8 +115,6 @@ nav a:hover { /* when the click pass by, the name go up a bit and became a bit o
 
 
 /* Button Styles */
-
-/*Creates a rounded button with a shadow and hover effects.*/
 .btn {
     background-color: var(--maple-orange);
     color: var(--cream);
@@ -145,10 +130,9 @@ nav a:hover { /* when the click pass by, the name go up a bit and became a bit o
     cursor: pointer;
 }
 
-/*Adds a hover effect with a slight lift*/
 .btn:hover {
     background-color: var(--autumn-gold);
-    transform: translateY(-3px); /*the lift effect*/
+    transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
@@ -158,7 +142,6 @@ nav a:hover { /* when the click pass by, the name go up a bit and became a bit o
     margin-left: 1rem;
 }
 
-/*outline of the button */
 .btn-outline:hover {
     background-color: var(--cream);
     color: var(--momiji-red);
@@ -167,33 +150,31 @@ nav a:hover { /* when the click pass by, the name go up a bit and became a bit o
 
 
 /* Form Styles */
-
-/* Styles a search form with a dark background and paddin*/
 .search-form {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    background-color: rgba(0, 0, 0, 0.9);  /*opac */
-    background-blend-mode: darken; /*mode darken for the background*/
+    background-color: rgba(0, 0, 0, 0.9); 
+    background-blend-mode: darken;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-/* Wraps individual form elements for spacing.*/
 .form-group {
+
     margin-bottom: 1.5rem;
 }
 
-/* Styles form labels for clarity.*/
 label {
     display: block;
     margin-bottom: 0.5rem;
     color: var(--cream);
     font-weight: 500;
+
+
 }
 
-/*Defines input fields with custom colors and transitions.*/
 input, select {
     width: 100%;
     padding: 0.8rem;
@@ -206,7 +187,6 @@ input, select {
     background-blend-mode: darken;
 }
 
-/*Highlights input fields when active.*/
 input:focus, select:focus {
     border-color: var(--maple-orange);
     outline: none;
@@ -215,8 +195,6 @@ input:focus, select:focus {
 
 
 /* Feature Grid */
-
-/* Grid for a flexible layout of feature cards.*/
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -226,7 +204,7 @@ input:focus, select:focus {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-/*Creates individual feature blocks with hover effects*/
+
 .feature-card {
     padding: 2rem;
     font-family: 'Noto Sans JP', sans-serif;
@@ -237,13 +215,12 @@ input:focus, select:focus {
     background-blend-mode: darken;
 }
 
-/*when hover, it go up*/
 .feature-card:hover {
     transform: translateY(-5px);
 }
 
-
 .feature-card h3 {
+
     font-family: 'Noto Sans JP', sans-serif;
     color: var(--momiji-red);
     margin-bottom: 1rem;
@@ -260,8 +237,6 @@ input:focus, select:focus {
 
 
 /* Tour Grid */
-
-/*Similar to .feature-grid, but used for tours.*/
 .tour-grid {
     display: grid;
     font-family: 'Noto Sans JP', sans-serif;
@@ -276,7 +251,7 @@ input:focus, select:focus {
     transition: transform 0.3s ease;
     text-align: center;
     font-family: 'Noto Sans JP', sans-serif;
-    background-position: center;     /*get the image to be clear and show all the image (most of it)*/					  
+    background-position: center;     					  
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.8); 
     background-blend-mode: darken;
@@ -292,7 +267,6 @@ input:focus, select:focus {
     margin-bottom: 1rem;
 }
 
-/*Styles price text with bold orange color*/
 .price {
     font-family: 'Noto Sans JP', sans-serif;
     display: block;
@@ -306,8 +280,6 @@ input:focus, select:focus {
 
 
 /* Journey Highlights */
-
-/* Defines a section with a dark background and padding.*/
 .journey-highlights {
     font-family: 'Noto Sans JP', sans-serif;
     padding: 4rem 2rem;
@@ -328,12 +300,14 @@ input:focus, select:focus {
 .highlights-list li {
     font-family: 'Noto Sans JP', sans-serif;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /*adds a thin bottom border with a semi-transparent black color (10% opacity).*/
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+ 
     padding-left: 2rem;
 }
 
 .highlights-list li::before {
     content: "🍁";
+
     left: 0;
     top: 1rem;
 }
@@ -348,8 +322,6 @@ section h3 {
 }
 
 /* Footer */
-
-/*Styles the footer with a dark background and centered text.*/
 footer {
     font-family: 'Noto Sans JP', sans-serif;
     background-color: var(--zen-gray);
@@ -359,12 +331,12 @@ footer {
     margin-top: 4rem;
 }
 
-/* Main Content Wrapper: Ensures content takes at least 80% of the viewport height, so the page is long enough even with no so much info */
+/* Main Content Wrapper */
 main {
     min-height: 80vh;
 }
 
-/* CTA Buttons Container: Aligns call-to-action(cta) buttons side by side */
+/* CTA Buttons Container */
 .cta-buttons {
     display: flex;
     justify-content: center;
@@ -372,77 +344,63 @@ main {
 }
 
 /* Animations */
-
-/*Defines a smooth fade-in animation.*/
 @keyframes fadeIn {
-from {
-    opacity: 0;              /* Starts completely transparent */
-    transform: translateY(20px); /* Starts 20px lower than its final position */
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-to {
-    opacity: 1;              /* Ends fully visible */
-    transform: translateY(0);  /* Moves to its final position */
-}
-
-/*Applies the fade-in effect for these class*/
-.feature-card, .tour-card {
+.feature-card, .tour-card, .about-text {
     animation: fadeIn 0.6s ease-out forwards;
 }
 
-/* Responsive Design: Adjusts styles for any screens (small to big: with max wide 768px) */
+/* Responsive Design */
 @media (max-width: 768px) {
-
-    /*reduce*/
     header h1 {
         font-size: 2rem;
     }
-    /* Make nav links block with margin */
+    
     nav a {
         display: block;
         margin: 0.5rem 1rem;
     }
     
-    /*reduce*/
     .page-hero {
         padding: 4rem 1rem;
     }
     
-    /*reduce*/
     .page-hero h2 {
         font-size: 2.5rem;
     }
-
-    /*reduce*/
+    
     .page-hero p {
         font-size: 1.2rem;
     }
     
-    /*make it into one column*/
     .feature-grid, .tour-grid, .about-grid {
         grid-template-columns: 1fr;
         padding: 1rem;
     }
     
-    /* place the button vertically for smaller device*/
     .cta-buttons {
         flex-direction: column;
     }
     
-    /* remove the margin of the outline button*/
     .btn-outline {
         margin-left: 0;
     }
 
-    /*add margin*/
     .search-form {
         margin: 1rem;
         padding: 1rem;
     }
 }
 
-
-/*reset everything, it was recommended for consistency across browsers. */ 
 * {
   margin: 0;
   padding: 0;
@@ -457,7 +415,6 @@ to {
 
 /*Login page*/
 
-/*Sets a fixed background image for the login page.*/
 .background {
   background-image: url("../images/photo_login.jpg");
   background-position: center;
@@ -465,7 +422,6 @@ to {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
 
 a {
   text-decoration: none;
@@ -477,18 +433,15 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Centers the login box on the screen.*/
 .wrap {
   width: 100%;
   display: flex;
-    /*make it stay in the center horizontally and vertically*/
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-/*Styles the login container with a blur effect.*/
 .login_box {
   position: relative;
   width: 450px;
@@ -501,7 +454,7 @@ a:hover {
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
 }
 
-/*Creates a styled header for the login box.*/
+
 .login-header {
   position: absolute;
   top: 0;
@@ -516,12 +469,10 @@ a:hover {
   border-radius: 0 0 20px 20px;
 }
 
-
 .login-header span {
   font-size: 30px;
   color: var(--cream);
 }
-
 
 .login-header::before {
   content: "";
@@ -547,7 +498,7 @@ a:hover {
   box-shadow: -15px 0 0 0 var(--zen-gray); /* Removed space before "connexion" */
 }
 
-/*Groups input fields with proper spacing.*/
+
 .input_box {
   position: relative;
   display: flex;
@@ -555,7 +506,6 @@ a:hover {
   margin: 20px 0;
 }
 
-/* Defines styles for input fields.*/
 .input-field {
   width: 100%;
   height: 55px;
@@ -568,12 +518,10 @@ a:hover {
   outline: none;
 }
 
-
 #user {
   margin-bottom: 10px;
 }
 
-/*Moves above the input when focused.*/
 .label {
   position: absolute;
   top: 15px;
@@ -594,7 +542,6 @@ a:hover {
   padding: 0 10px;
 } 
 
-/*Positions an icon inside the input field.*/
 .icon {
   position: absolute;
   top: 18px;
@@ -602,14 +549,12 @@ a:hover {
   font-size: 20px;
 }
 
-/*Aligns "Remember Me" and "Forgot Password" options.*/
 .remember-forgot {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   font-size: 15px;
 }
-
 
 .remember-me {
   display: flex;
@@ -619,7 +564,6 @@ a:hover {
 white-space: nowrap; 
 }
 
-/*Styles the login button.*/
 .input-submit {
   width: 100%;
   height: 50px;
@@ -636,10 +580,9 @@ white-space: nowrap;
   background: var(--dark-black);
   outline: 2px solid var(--maple-orange); 
 
-
 }
 
-/*Centers and styles the registration link.*/
+
 .register {
   text-align: center;
 
@@ -656,4 +599,112 @@ white-space: nowrap;
     border-radius:4px;
 }
 
+
+/*administrator */
+
+        /* badges example: name like this only for phase 1 */
+        .style-examples {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+        }
+
+        .style-examples h2 {
+            color: var(--cream);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+	    font-family: 'Noto Sans JP', sans-serif;
+
+	    
+        }
+
+        .example-section {
+            margin-bottom: 1rem;
+        }
+
+        .example-section h3 {
+            color: var(--cream);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Noto Sans JP', sans-serif;
+
+        }
+
+
+	/*Design of the badge that show the statut of each client*/
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .status-standard {
+            background-color: var(--zen-gray);
+            color: var(--cream);
+            border: 1px solid var(--cream);
+        }
+
+        .status-vip {
+            background-color: var(--autumn-gold);
+            color: var(--zen-gray);
+            font-weight: 600;
+        }
+
+
+
+        .btn-edit {
+            background-color: var(--maple-orange);
+            color: var(--cream);
+        }
+
+        .btn-edit:hover {
+            background-color: var(--autumn-gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-delete {
+            background-color: var(--momiji-red);
+            color: var(--cream);
+        }
+
+        .btn-delete:hover {
+            background-color: var(--momiji-red);
+            transform: translateY(-2px);
+        }
+
+
+
+	/*Make it in advance*/
+        .client-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .client-table th,
+        .client-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .client-table th {
+            background-color: var(--momiji-red);
+            color: var(--cream);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--cream);
+            font-style: italic;
+        }
 
