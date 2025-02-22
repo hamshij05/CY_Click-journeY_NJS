@@ -49,11 +49,11 @@ Extraire le contenu du fichier ZIP dans un dossier de votre choix.
 
 ## Fonctionnalités du site     
 **`index.html`** : Page d'accueil présentant les principales informations et attractions du site  
-**`biblio.h`** : interface d'administration permettant de gérer les utilisateurs, les réser
+**`biblio.h`** : interface d'administration permettant de gérer les utilisateurs, les réser  
 **`login_form.html`** : formulaire de connexion pour les utilisateurs et administrateurs  
 **`sign_up.html`** : formulaire d'inscription pour créer un compte utilisateur  
-**`tour.html`** : 
-**`presentation.html`** : 
+**`tour.html`** :   
+**`presentation.html`** :   
 **`biblio.html`**
 Dossier  **`assets`** contient les fichiers CSS, images 
 Le projet
