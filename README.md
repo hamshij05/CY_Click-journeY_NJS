@@ -48,7 +48,7 @@ Extraire le contenu du fichier ZIP dans un dossier de votre choix.
 **`biblio.h`** : interface d'administration permettant de gérer les utilisateurs, les réser  
 **`login_form.html`** : formulaire de connexion pour les utilisateurs et administrateurs  
 **`sign_up.html`** : formulaire d'inscription pour créer un compte utilisateur  
-**`tour.html`** :   
+**`tour.html`** : page listant les circuits touristiques diponibles avec descriptions et liens vers les détails des voyages  
 **`presentation.html`** :   
 **`biblio.html`**
 Dossier  **`assets`** contient les fichiers CSS, images 
