@@ -37,9 +37,7 @@ Le projet est divisé en plusieurs phases :
 
 [![css][css]][css-url]
 
-
 Frontend : HTML, CSS, JavaScript  
-Backend : PHP, MySQL  
 Versionnement : GitHub  
 
 ## Installation   
