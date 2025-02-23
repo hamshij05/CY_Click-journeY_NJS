@@ -50,9 +50,7 @@ Extraire le contenu du fichier ZIP dans un dossier de votre choix.
 **`sign_up.html`** : formulaire d'inscription pour créer un compte utilisateur  
 **`tour.html`** : page listant les circuits touristiques diponibles avec descriptions et liens vers les détails des voyages  
 **`presentation.html`** : présentation de l'agence, ses valeurs et recherche de circuits par thème     
-**`biblio.html`**
-Dossier  **`assets`** contient les fichiers CSS, images 
-Le projet
+**`assets`** contient les fichiers CSS et les images utilisées sur nos pages  
 
 ## Auteurs    
 - **Hamshigaa JEKUMAR** - hamshij05  
