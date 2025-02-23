@@ -36,9 +36,7 @@ Le projet est divisé en plusieurs phases :
 [css-url]: https://developer.mozilla.org/fr/docs/Web/CSS/Reference
 
 [![css][css]][css-url]
-
-Frontend : HTML, CSS, JavaScript  
-Versionnement : GitHub  
+ 
 
 ## Installation   
 1. Télécharger le fichier ZIP du projet depuis GitHub. Pour télécharger et installer, suivez ces étapes :
