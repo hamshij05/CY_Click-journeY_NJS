@@ -708,3 +708,60 @@ white-space: nowrap;
             font-style: italic;
         }
 
+.profil-section {
+  display : grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 2.5em;
+  width: fit-content;
+  margin: auto;
+}
+
+.profil {
+  color: var(--momiji-red);
+	border: 2px solid var(--paper-white);
+	border-radius: 4px;
+	background-color: var(--autumn-gold);
+  height: 3.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding : 2em 2em 2em 2em;
+}
+
+.edit-profil {
+    grid-column: span 2; /* Prend toute la largeur (2 colonnes) */
+    margin-top: 20px;
+    background-color: var(--autumn-gold);
+    border-radius: 4px;
+    height: 3.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding : 2em 2em -2em 2em;
+}
+
+.title-profil {
+  text-align: center;
+  padding: 0.5em 0.5em;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)
+  ), url('../images/bg-autumn.jpg');
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.profile-picture {
+    width: 10em; 
+    height: 10em;
+    border-radius: 50%;
+    object-fit: cover; 
+    border: 1em solid var(--autumn-gold);
+}
+
