@@ -36,7 +36,11 @@ Le projet est divisé en plusieurs phases :
 [css-url]: https://developer.mozilla.org/fr/docs/Web/CSS/Reference
 
 [![css][css]][css-url]
- 
+
+[php]: https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white
+[php-url]: https://developer.mozilla.org/fr/docs/Glossary/PHP
+
+[![php][php]][php-url]
 
 ## Installation   
 1. Télécharger le fichier ZIP du projet depuis GitHub. 
