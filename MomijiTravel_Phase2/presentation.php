@@ -67,13 +67,13 @@ $isLoggedIn = isset($_SESSION['user_id']);
         <section class="features">
             <!--the class search section and form make it a place to search for a theme of the travel (interraction with the web)-->
             <section class="search-section">
-                <form class="search-form" action="tour.php" method="get">
+                <form class="search-form" action="tour.html" method="get">
                     <div class="form-group">
                         <label for="theme">Thème du Voyage :</label>
 
                         <!--the ID is used here so the page know where to send the client on the tour page ( culture part, food part or detente part-->
                         <!-- required is to obligate the client before sending the form to choose an option and onchange is to modify dynamically the action attribute-->
-                        <select id="theme" name="theme" required onchange="this.form.action = 'tour.php#' + this.value;">
+                        <select id="theme" name="theme" required onchange="this.form.action = 'tour.html#' + this.value;">
                             <option value="">Choisir un thème</option>
                             <option value="culture">Culture & Temples </option>
                             <option value="food">Gastronomique & Traditionnel</option>

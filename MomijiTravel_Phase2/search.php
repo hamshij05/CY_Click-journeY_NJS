@@ -35,7 +35,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
 		<a href="tour.html">Les circuits typiques</a>
         <?php include 'nav.php'; ?> 
 
-		<a href="profil.html">Votre Profil</a>
+		<a href="profil.php">Votre Profil</a>
         </nav>
     </header>
 
@@ -113,8 +113,4 @@ $isLoggedIn = isset($_SESSION['user_id']);
 	</section>
 
     </main>
-    <footer>
-        <p>&copy; 2025 Momiji Travel - Tous droits réservés</p>
-    </footer>
-</body>
-</html>
+    <?php include 'footer.php'; ?> 

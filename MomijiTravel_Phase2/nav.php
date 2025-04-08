@@ -7,4 +7,3 @@
         <a href="login_form.php">Connexion</a>
         <a href="sign_up.php">S'inscrire</a>
     <?php endif; ?>
-</nav> 

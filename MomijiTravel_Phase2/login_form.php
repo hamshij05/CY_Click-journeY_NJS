@@ -1,13 +1,63 @@
 <?php
 session_start();
 
-// Verify if the user is connected
-$isLoggedIn = isset($_SESSION['user_id']);
+// Verify if the user is already connected
+if (isset($_SESSION['user_id'])) {
+    header('Location: index.php');
+    exit;
+}
+
+// Function to verify credentials
+function verifyCredentials($login, $password) {
+    if (!file_exists('users.json')) {
+        return ['error' => 'Erreur système, veuillez réessayer plus tard'];
+    }
+    
+    $usersData = json_decode(file_get_contents('users.json'), true);
+    
+    foreach ($usersData['users'] as $user) {
+        if ($user['login'] === $login) {
+            if (password_verify($password, $user['password'])) {
+                return ['success' => true, 'user' => $user];
+            } else {
+                return ['error' => 'Mot de passe incorrect'];
+            }
+        }
+    }
+    
+    return ['error' => 'Identifiant non trouvé'];
+}
+
+// Traitement du formulaire de connexion
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $login = $_POST['login'] ?? '';
+    $password = $_POST['password'] ?? '';
+    
+    $error = '';
+    
+    // Vérifier si les champs sont remplis
+    if (empty($login) || empty($password)) {
+        $error = 'Veuillez remplir tous les champs';
+    } else {
+        $result = verifyCredentials($login, $password);
+        
+        if (isset($result['success']) && $result['success']) {
+            // Connexion réussie
+            $_SESSION['user_id'] = $result['user']['id'];
+            $_SESSION['user_login'] = $result['user']['login'];
+            
+            // Redirection vers la page de index
+            header('Location: index.php');
+            exit;
+        } else {
+            $error = $result['error'];
+        }
+    }
+}
 ?>
 
-
 <!DOCTYPE html>
-<html lang="fr" >
+<html lang="fr">
 
 <!--Description of the page-->
 <head>
@@ -33,7 +83,6 @@ $isLoggedIn = isset($_SESSION['user_id']);
 		<a href="presentation.php">Présentation</a>
 		<a href="search.php">Rechercher un voyage</a>
 		<a href="tour.html">Les circuits typiques</a>
-		<a href="sign_up.php">S'inscrire</a>
 		<a href="profil.php">Votre Profil</a>
         </nav>
   </header>
@@ -41,55 +90,44 @@ $isLoggedIn = isset($_SESSION['user_id']);
     <main>
 	<!-- this section is for another background image-->
 	<section class = "background"> 
-		<!-- container that centers its content both horizontally and vertically on the screen. -->
+		
   		<div class="wrap">
-			<!--Login box styling with blur effect, border, and shadow-->
+			
   			<div class="login_box">
-    				<div class="login-header"> <!--title of the login form-->
+    				<div class="login-header"> 
       					<span>Connexion</span>
     				</div>
 
-    				<div class="input_box">
-      					<input type="text" id="user" class="input-field" required>
-      					<label for="user" class="label">Identifiant</label>
-      					<i class="bx bx-user icon"></i> <!-- This is to put the "user icon" to represente the field--> 
-    				</div>
+					<?php if (isset($error) && !empty($error)): ?>
+						<div class="error-message">
+							<p><?php echo htmlspecialchars($error); ?></p>
+						</div>
+					<?php endif; ?>
 
-    				<div class="input_box">
-      					<input type="password" id="pass" class="input-field" required>
-      					<label for="pass" class="label">Mot de passe</label>
-      					<i class="bx bx-lock-alt icon"></i> <!--icon for password-->
-    				</div>
+					<form action="login_form.php" method="post">
+  						<div class="input_box">
+    						<input type="text" name="login" class="input-field" placeholder="Identifiant" required>
+    						<i class="bx bx-user icon"></i>
+  						</div>
+    				
+  						<div class="input_box">
+    						<input type="password" name="password" class="input-field" placeholder="Mot de passe" required>
+    						<i class="bx bx-lock-alt icon"></i> <!--icon for password-->
+  						</div>
 
-    				<div class="remember-forgot">
-      					<div class="remember-me">
-        				<input type="checkbox" id="remember"> <!--checknox to notice the web to remember the password-->
-        				<label for="remember">Se souvenir de moi</label>
-      				</div>
-
-      				<div class="forgot">
-        				<a href="#">Mot de passe oublié ?</a> <!-- there is still no page to recover the account of the client-->
-      				</div>
-    			</div>
-
-			<form action="index.html" method="get">
+			<form action="index.php" method="get">
   				<div class="input_box">
     					<input type="submit" class="input-submit" value="Se connecter"> <!-- button to login in-->
   				</div>
 			</form>
 
     			<div class="register">
-      				<p>Pas de compte ? 
-      				<a href="sign_up.html">Inscrivez-vous</a></p>    
+      				<p>Pas encore de compte ? 
+      				<a href="sign_up.php">Inscrivez-vous</a></p>    
     			</div>
   		</div>
 	</div>
 </section>  
 
     </main>
-    <footer>
-        <p>&copy; 2025 Momiji Travel - Tous droits réservés</p>
-    </footer>
-
-</body>
-</html>
+	<?php include 'footer.php'; ?> 
