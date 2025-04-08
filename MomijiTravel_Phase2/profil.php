@@ -11,25 +11,21 @@ if (!$isLoggedIn) { // if the user is not connected, redirect to the login page
 
 $userId = $_SESSION['user_id'];
 $usersFile = "users.json";
-$uploadDir = 'uploads';
+$uploadDir = 'assets/images/profil';
 
-// Create uploads directory for profile pictures if it doesn't exist
-if (!file_exists($uploadDir)) {
-    mkdir($uploadDir, 0755, true);
-}
 
 // Function to get profile picture path
 function getProfilePicture($userId) {
     // Check for user's profile picture in common image formats
     $formats = ['jpg', 'jpeg', 'png'];
     foreach ($formats as $format) {
-        $path = "uploads/profile_{$userId}.{$format}";
+        $path = "assets/images/profil/profile_{$userId}.{$format}";
         if (file_exists($path)) {
             return $path;
         }
     }
     // Return default image if no custom profile picture exists
-    return 'assets/images/profil.jpg';
+    return 'assets/images/profil/profil.jpg';
 }
 
 // Function to get all users data
@@ -217,6 +213,5 @@ $profilePicture = getProfilePicture($userId);
     <?php endif; ?>
   </main>
   <?php include 'footer.php'; ?> 
-
 
 
