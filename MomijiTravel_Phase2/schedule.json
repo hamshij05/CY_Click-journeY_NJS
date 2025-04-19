@@ -1,0 +1,71 @@
+{
+    "culture": {
+        "kanto": [
+            "Tokyo – Visite du temple Sensō-ji, promenade dans le jardin Rikugien",
+            "Nikko – Sanctuaire Toshogu (UNESCO), balade au lac Chuzenji",
+            "Hakone – Visite du temple Choanji, détente dans un ryokan avec onsen",
+            "Kamakura – Temples Engaku-ji et Hasedera, vue sur l’océan",
+            "Jour libre ou changement"
+        ],
+        "kansai": [
+            "Kyoto – Temple Kiyomizu-dera, promenade à Gion",
+            "Kyoto – Arashiyama (forêt de bambous) et temple Tofuku-ji (feuilles rouges)",
+            "Nara – Parc de Nara, visite du temple Todai-ji",
+            "Koyasan – Nuit dans un temple bouddhiste, méditation zen",
+            "Jour libre ou changement"
+        ],
+        "tohoku": [
+            "Sendai – Temple Zuihoden, marché de poissons",
+            "Yamadera – Randonnée au temple avec vue panoramique",
+            "Gorges de Naruko – Feuillages rouges, ryokan avec onsen",
+            "Lac Towada – Croisière et observation des érables",
+            "Jour libre ou changement"
+        ]
+    },
+    "gastronomique": {
+        "kanto": [
+            "Tokyo – Dîner de kaiseki, découverte du marché de Tsukiji",
+            "Hakone – Onsen avec vue sur le Mont Fuji, dégustation de tofu yuba",
+            "Chiba – Dégustation de poissons frais à Katsuura, promenade au temple Naritasan",
+            "Tokyo – Shopping de spécialités japonaises",
+            "Jour libre ou changement"
+        ],
+        "kansai": [
+            "Osaka – Dégustation de takoyaki et okonomiyaki, visite du château",
+            "Kyoto – Dîner kaiseki, nuit en ryokan avec onsen privé",
+            "Kobe – Dégustation du bœuf de Kobe, visite du Mont Rokko",
+            "Osaka – Voyage libre",
+            "Jour libre ou changement"
+        ],
+        "tohoku": [
+            "Aizu-Wakamatsu – Dégustation de soba, visite du château de Tsuruga-jo",
+            "Akita – Expérience du kiritanpo nabe (fondue locale), ryokan traditionnel",
+            "Nyuto Onsen – Bain dans une source thermale cachée en pleine nature",
+            "Morioka – Dégustation de wanko soba",
+            "Jour libre ou changement"
+        ]
+    },
+    "détente": {
+        "kansai": [
+            "Hakone – Nuit en ryokan avec onsen, promenade près du lac Ashi",
+            "Izu – Bain dans un onsen en bord de mer, découverte des sources thermales de Shuzenji",
+            "Karuizawa – Observation des érables dans le jardin Kumoba, spa haut de gamme",
+            "Tokyo – Journée shopping détente à Ginza et Omotesando",
+            "Jour libre ou changement"
+        ],
+        "kanto": [
+            "Arashiyama – Forêt de bambous, temples et ryokan",
+            "Kinosaki Onsen – Expérience de sept bains publics traditionnels",
+            "Wakayama – Détente en bord de mer, onsen avec vue sur l’océan",
+            "Kyoto – Jardins zen et cérémonie du thé",
+            "Jour libre ou changement"
+        ],
+        "tohoku": [
+            "Nyuto Onsen – Séjour en ryokan avec onsen naturel",
+            "Ginzan Onsen – Promenade dans un village thermal d’époque",
+            "Sendai – Visite du jardin Jozenji-dori et détente",
+            "Sendai – Visite libre",
+            "Jour libre ou changement"
+        ]
+    }
+}

@@ -3,6 +3,74 @@ session_start();
 
 // Verify if the user is connected
 $isLoggedIn = isset($_SESSION['user_id']);
+
+// Check if the user is an admin
+// $isAdmin = false;
+// if ($isLoggedIn && isset($_SESSION['user_login']) && $_SESSION['user_login'] === 'admin') {
+   // $isAdmin = true;
+//} else {
+    // Redirect to login page if not admin
+  //  header('Location: login_form.php');
+    //exit;
+//}
+
+// Function to get all users data
+function getAllUsers($filePath) {
+    if (file_exists($filePath)) {
+        $jsonData = file_get_contents($filePath);
+        return json_decode($jsonData, true);
+    }
+    return ["users" => []];
+}
+
+// Load users data
+$usersFile = "users.json";
+$userData = getAllUsers($usersFile);
+$users = $userData['users'];
+
+// Filter users based on search criteria
+$searchName = isset($_GET['search']) ? $_GET['search'] : '';
+$filterStatus = isset($_GET['status']) ? $_GET['status'] : '';
+
+// Initialize filtered users array
+$filteredUsers = [];
+
+// Apply filters
+foreach ($users as $user) {
+    // Check if the user has Kansai in any of their reservations
+    $isVIP = false;
+    if (isset($user['reservation'])) {
+        foreach ($user['reservation'] as $reservation) {
+            if ((strpos($reservation['transport'], 'vip') !== false || 
+                (isset($reservation['transport']) && strpos($reservation['transport'], 'VIP') !== false)) ||
+                (strpos($reservation['hotel'], 'vip') !== false || 
+                (isset($reservation['hotel']) && strpos($reservation['hotel'], 'VIP') !== false))) {
+                $isVIP = true;
+                break;
+            }
+        }
+    }
+    
+    // Apply status filter
+    if ($filterStatus === 'vip' && !$isVIP) {
+        continue;
+    } elseif ($filterStatus === 'standard' && $isVIP) {
+        continue;
+    }
+    
+    // Apply search filter
+    if (!empty($searchName) && 
+        stripos($user['surname'] . ' ' . $user['first_name'], $searchName) === false &&
+        stripos($user['email'], $searchName) === false) {
+        continue;
+    }
+    
+    // Add user status
+    $user['status'] = $isVIP ? 'VIP' : 'Standard';
+    
+    // Add user to filtered list
+    $filteredUsers[] = $user;
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,73 +84,43 @@ $isLoggedIn = isset($_SESSION['user_id']);
   <meta name="description" content="Une page web d'agence de voyage au Japon en automne pour 10 jours." />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
-
-
 </head>
-
-
-<!-- this page won't be accessible from any other pages. Normally, only the administrator that had the accountof admin will be able to access to this page.--> 
 
 <body>
     <header>
         <h1>紅葉 Momiji Travel - Administration des Clients</h1>  
-	<!--Navigation part to navigate through different pages--> 
+        <!--Navigation part to navigate through different pages--> 
         <nav>
-	    <a href="index.php">Accueil</a>
+            <a href="index.php">Accueil</a>
             <a href="presentation.php">Présentation</a>
             <a href="search.php">Rechercher un voyage</a>
-	    <a href="tour.html">Les circuits typiques</a>
-        <?php include 'nav.php'; ?> 
+            <a href="tour.php">Les circuits typiques</a>
+            <?php include 'nav.php'; ?> 
         </nav>
     </header>
 
+    <main>
+        <br/>
 
-
-<main>
-
-	<br/>
-
-	<!--Section features is used just like in the presentation page with a search form, adding and input field to find the client directly-->
-        <section class="features">
-	        <section class="search-section" >
-		<input type="text" class="search-input" placeholder="Rechercher un client..."
-                <form class="search-form" action="admin_page.html" method="get">
+        <!--Section features with search form-->
+        <section class="journey-highlights">
+            <section class="search-section">
+                <form class="search-form" action="admin_page.php" method="get">
                     <div class="form-group">
-                     
-                        <select id="statut" name="Statut" required onchange="this.form.action = 'admin_page.html#' + this.value;">
-                            <option value="">Choisir le statut</option>
-                            <option value="vip">VIP</option>
-                            <option value="standard">Standard </option>
+                        <input type="text" name="search" class="search-input" placeholder="Rechercher un client..." value="<?php echo htmlspecialchars($searchName); ?>">
+                        <select id="status" name="status">
+                            <option value="">Tous les statuts</option>
+                            <option value="vip" <?php echo $filterStatus === 'vip' ? 'selected' : ''; ?>>VIP</option>
+                            <option value="standard" <?php echo $filterStatus === 'standard' ? 'selected' : ''; ?>>Standard</option>
                         </select>
                     </div>
-                <button type="submit" class="btn btn-search">Rechercher</button>
-		<button type="submit" class="btn btn-search">+ Ajouter un Client</button>
-	        </form>
-	    </section>
-	</section>
+                    <button type="submit" class="btn btn-search">Rechercher</button>
+                    <a href="sign_up.php" class="btn btn-search">+ Ajouter un Client</a>
+                </form>
+            </section>
+        </section>
 
-
-
-
-      <!--this is only temporaly, because without client we can't show all these option-->
-        <div class="style-examples">
-            <h2>Styles disponibles</h2>
-            <div class="example-section">
-                <h3>Badges de statut :</h3>
-                <span class="status-badge status-standard">Standard</span>
-                <span class="status-badge status-vip">VIP</span>
-            </div>
-            <div class="example-section">
-                <h3>Boutons d'action :</h3>
-                <div class="client-actions">
-                    <button class="btn btn-edit">Modifier</button>
-                    <button class="btn btn-delete">Supprimer</button>
-                </div>
-            </div>
-        </div>
-
-	
-	<!--A table that will have every client-->
+        <!--A table that will display all clients-->
         <table class="client-table">
             <thead>
                 <tr>
@@ -90,18 +128,50 @@ $isLoggedIn = isset($_SESSION['user_id']);
                     <th>Prénom</th>
                     <th>Email</th>
                     <th>Statut</th>
-                    <th>Réservation</th>
+                    <th>Réservations</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td colspan="6" class="empty-state">Aucun client trouvé</td>  <!--this is also temporaly as there is no client-->
-                </tr>
+                <?php if (empty($filteredUsers)): ?>
+                    <tr>
+                        <td colspan="6" class="empty-state">Aucun client trouvé</td>
+                    </tr>
+                <?php else: ?>
+                    <?php foreach ($filteredUsers as $user): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($user['surname']); ?></td>
+                            <td><?php echo htmlspecialchars($user['first_name']); ?></td>
+                            <td><?php echo htmlspecialchars($user['email']); ?></td>
+                            <td>
+                                <span class="status-badge status-<?php echo strtolower($user['status']); ?>">
+                                    <?php echo $user['status']; ?>
+                                </span>
+                            </td>
+                            <td>
+                                <?php if (isset($user['reservation']) && !empty($user['reservation'])): ?>
+                                    <ul class="reservation-list">
+                                        <?php foreach ($user['reservation'] as $index => $reservation): ?>
+                                            <li>
+                                                <?php echo htmlspecialchars($reservation['region1']); ?>
+                                                <?php if (!empty($reservation['region2'])): ?>
+                                                    , <?php echo htmlspecialchars($reservation['region2']); ?>
+                                                <?php endif; ?>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php else: ?>
+                                    <span class="no-reservation">Aucune réservation</span>
+                                <?php endif; ?>
+                            </td>
+                            <td class="client-actions">
+                                <a href="edit_client.php?id=<?php echo $user['id']; ?>" class="btn btn-edit">Modifier</a>
+                                <a href="view_client.php?id=<?php echo $user['id']; ?>" class="btn btn-view">Voir</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </tbody>
         </table>
-    </div>
-</main>
+    </main>
     <?php include 'footer.php'; ?>
-</body>
-</html>

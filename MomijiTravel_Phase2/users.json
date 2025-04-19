@@ -1,20 +1,48 @@
 {
     "users": [
         {
-            "id": "67f486ddd82df",
-            "first_name": "aaa",
-            "surname": "aa",
-            "email": "aaa@gmail.com",
+            "id": "6802fe885370f",
+            "first_name": "Thuy Tran",
+            "surname": "NGUYEN",
+            "email": "fennestyno@gmail.com",
             "login": "aa",
-            "password": "$2y$10$sx5VXzhZpiqb0RvuV3nHUeQZpm6Mc1RW1EPOM\/\/qHcXxspjvNbOSm"
+            "password": "$2y$10$zLAbKvWGdpWzQ\/WwB0W\/r.3RpMOHUvZoD.BySf9NxilMZLm5OSt3.",
+            "reservation": [
+                {
+                    "date": "26\/04\/2025",
+                    "duration": "5",
+                    "participants": 1,
+                    "transport": "Transport VIP",
+                    "hotel": "Hotel VIP",
+                    "region1": "Kantō (Tokyo et alentours)",
+                    "theme1": "Gastronomique & Traditionnel",
+                    "region2": "",
+                    "theme2": "",
+                    "total_price": 2000
+                }
+            ]
         },
         {
-            "id": "67f487cf474eb",
-            "first_name": "lala",
-            "surname": "lolo",
-            "email": "lalo@gmail.com",
-            "login": "lalo",
-            "password": "$2y$10$j4UUzLF5sp\/f8LgluSh8aur7JketEuPN.k3Kt0uggoX8B5iciGzWu"
+            "id": "6803126d4747d",
+            "first_name": "fenny",
+            "surname": "NO",
+            "email": "trannguyen270605@gmail.com",
+            "login": "NOU",
+            "password": "$2y$10$GIgj6ImNDTFDiskRlP04tOEHIOSzgsxZSwUmgNSaTkt.whMJOHD7G",
+            "reservation": [
+                {
+                    "date": "26\/04\/2025",
+                    "duration": "10",
+                    "participants": "1",
+                    "transport": "Transport Standard",
+                    "hotel": "Hotel Standard",
+                    "region1": "Kansai (Kyoto, Osaka, Nara, Kobe)",
+                    "theme1": "Gastronomique & Traditionnel",
+                    "region2": "Kanto (Tokyo et alentours)",
+                    "theme2": "Gastronomique & Traditionnel",
+                    "total_price": "3600"
+                }
+            ]
         }
     ]
 }

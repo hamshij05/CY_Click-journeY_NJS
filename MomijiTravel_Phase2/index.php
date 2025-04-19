@@ -26,7 +26,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
         <nav>
             <a href="presentation.php">Présentation</a>
             <a href="search.php">Rechercher un voyage</a>
-            <a href="tour.html">Les circuits typiques</a>
+            <a href="tour.php">Les circuits typiques</a>
             <?php include 'nav.php'; ?> 
         </nav>
     </header>

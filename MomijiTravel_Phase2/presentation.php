@@ -23,7 +23,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
         <nav>
             <a href="index.php">Accueil</a>
             <a href="search.php">Rechercher un voyage</a>
-            <a href="tour.html">Les circuits typiques</a>
+            <a href="tour.php">Les circuits typiques</a>
             <?php include 'nav.php'; ?> 
         </nav>
     </header>
@@ -80,7 +80,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
                             <option value="detente">Détente & Bien-être </option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-search">Rechercher</button> <!-- class to design a dynamic button-->
+                    <button type="submit" class="btn btn-search">Rechercher</button> 
                 </form>
             </section>
         </section>

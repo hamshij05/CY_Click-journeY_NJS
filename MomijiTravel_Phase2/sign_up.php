@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	          <a href="index.php">Accueil</a>
             <a href="presentation.php">Présentation</a>
             <a href="search.php">Rechercher un voyage</a>
-            <a href="tour.html">Les circuits typiques</a>
+            <a href="tour.php">Les circuits typiques</a>
 	          <a href="login_form.php">Connexion</a>
         </nav>
   </header>

@@ -129,10 +129,10 @@ $profilePicture = getProfilePicture($userId);
 	<!--navigation part is to navigate through different pages -->
         <nav>
 	        <a href="index.php">Accueil</a>
-          <a href="presentation.php">Présentation</a>
-          <a href="search.php">Rechercher un voyage</a>
-		      <a href="tour.html">Les circuits typiques</a>
-          <?php include 'nav.php'; ?> 
+            <a href="presentation.php">Présentation</a>
+            <a href="search.php">Rechercher un voyage</a>
+		    <a href="tour.php">Les circuits typiques</a>
+            <a href="logout.php">Déconnexion</a>
         </nav>
 
     </header> 
@@ -199,6 +199,43 @@ $profilePicture = getProfilePicture($userId);
                 </form>
             
           
+                <?php
+    // Check if the user has any reservations
+                    if (isset($user['reservation']) && !empty($user['reservation'])): ?>
+                        
+                    <section class="journey-highlights">
+                        <h3>Mes Réservations</h3>
+                        <?php 
+                        // Créer un tableau temporaire pour le tri
+                        $sortedReservations = $user['reservation'];
+                        
+                        // Fonction de comparaison pour trier par date
+                        usort($sortedReservations, function($a, $b) {
+                            return strtotime($a['date']) - strtotime($b['date']);
+                        });
+                        
+                        // Afficher les réservations triées
+                        foreach ($sortedReservations as $index => $reservation): 
+                            // Récupérer l'index original pour maintenir les liens corrects
+                            $originalIndex = array_search($reservation, $user['reservation']);
+                        ?>
+                            <a href="view_reservation.php?index=<?php echo $originalIndex; ?>" class="reservation-link">
+                                <p class="reservation-date">
+                                    <strong>Date:</strong> <?php echo htmlspecialchars($reservation['date']); ?>
+                                    
+                                    <strong>Région 1:</strong> <?php echo htmlspecialchars($reservation['region1']); ?>
+                                    <strong>Thème 1:</strong> <?php echo htmlspecialchars($reservation['theme1']); ?>
+                                    <?php if (!empty($reservation['region2'])): ?>
+                                        <strong>Région 2:</strong> <?php echo htmlspecialchars($reservation['region2']); ?>
+                                        <strong>Thème 2:</strong> <?php echo htmlspecialchars($reservation['theme2']); ?>
+                                    <?php endif; ?>
+                                </p>
+                                <div class="reservation-price"><strong>Prix total:</strong> <?php echo htmlspecialchars($reservation['total_price']); ?>€</div><br/>
+                            </a>
+                        <?php endforeach; ?>
+                    </section>
+        
+    <?php endif; ?>
         </section>
 
     
