@@ -10,6 +10,8 @@ if (!$isLoggedIn) {
     exit;
 }
 
+require 'functions/functions.php';
+
 // Check if deletion is requested
 if (isset($_POST['delete_reservation'])) {
     $reservationIndex = intval($_POST['reservation_index']);
@@ -86,21 +88,7 @@ $firstRegion = '';
 $secondTheme = '';
 $secondRegion = '';
 
-// Function to extract region code from full name
-function getRegionCode($fullName) {
-    if (strpos($fullName, 'Kantō') !== false) return 'kanto';
-    if (strpos($fullName, 'Kansai') !== false) return 'kansai';
-    if (strpos($fullName, 'Tōhoku') !== false) return 'tohoku';
-    return '';
-}
 
-// Function to extract theme code from full name
-function getThemeCode($fullName) {
-    if (strpos($fullName, 'Culture') !== false) return 'culture';
-    if (strpos($fullName, 'Gastronomique') !== false) return 'gastronomique';
-    if (strpos($fullName, 'Détente') !== false) return 'détente';
-    return '';
-}
 
 // Get region and theme codes
 $firstRegion = getRegionCode($reservation['region1']);
@@ -133,6 +121,10 @@ if ($reservation['duration'] === '5') {
 
 // Format date from the reservation format
 $formattedDate = $reservation['date']; // Already in display format
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -166,8 +158,8 @@ $formattedDate = $reservation['date']; // Already in display format
     </header>
 
     <main>
-        <section class="journey-highlights" style="background-image: url('<?php echo $backgroundImage; ?>') ;">
-            <h2>Votre circuit réservé</h2>
+        <section class="journey-highlights">
+            <h3>Votre circuit <?php echo $reservation['status']?></h3><br/>
             
             <div class="journey-info">
                 <p><strong>Date de départ:</strong> <?php echo $formattedDate; ?></p>
@@ -177,34 +169,15 @@ $formattedDate = $reservation['date']; // Already in display format
                 <p><strong>Type d'hébergement:</strong> <?php echo isset($reservation['hotel']) ? $reservation['hotel'] : 'Standard'; ?></p>
             </div>
             
-            <?php if (!empty($firstItinerary)): ?>
-                <h3>5 Jours à <?php echo $reservation['region1']; ?> (<?php echo $reservation['theme1']; ?>)</h3>
-                <p>Vous séjournerez pendant 5 jours dans différents hébergements de luxe, idéalement situés pour visiter tous les sites touristiques.</p>
-                
-                <ul class="highlights-list">
-                    <?php for ($i = 0; $i < count($firstItinerary); $i++): ?>
-                        <li>Jour <?php echo $i + 1; ?> : <?php echo $firstItinerary[$i]; ?></li>
-                    <?php endfor; ?>
-                </ul>
-            <?php endif; ?>
-            
-            <?php if ($reservation['duration'] === '10' && !empty($secondItinerary)): ?>
-                <h3>5 Jours à <?php echo $reservation['region2']; ?> (<?php echo $reservation['theme2']; ?>)</h3>
-                <p>Vous séjournerez pendant 5 jours dans différents hébergements de luxe, idéalement situés pour visiter tous les sites touristiques.</p>
-                
-                <ul class="highlights-list">
-                    <?php for ($i = 0; $i < count($secondItinerary); $i++): ?>
-                        <li>Jour <?php echo $i + 6; ?> : <?php echo $secondItinerary[$i]; ?></li>
-                    <?php endfor; ?>
-                </ul>
-            <?php endif; ?>
             
             <div class="price-info">
                 <p class="total-price">Prix total: <?php echo $reservation['total_price']; ?>€ pour <?php echo $reservation['participants']; ?> voyageur<?php echo $reservation['participants'] > 1 ? 's' : ''; ?></p>
             </div>
-            
+            <br/>
+
             <div class="booking-buttons">
-                <button type="button" class="btn btn-search" onclick="window.location.href='profil.php'">Retour au profil</button>
+
+                <?php if ($reservation['status']=='réservé'): ?>
                 <button type="button" class="btn btn-search" onclick="window.location.href='modify_reservation.php?index=<?php echo $reservationIndex; ?>'">Modifier cette réservation</button>
                 
                 <form method="post" action="" style="display: inline;" onsubmit="return confirmDelete();">
@@ -212,6 +185,59 @@ $formattedDate = $reservation['date']; // Already in display format
                     <input type="hidden" name="reservation_index" value="<?php echo $reservationIndex; ?>">
                     <button type="submit" class="btn btn-delete">Supprimer cette réservation</button>
                 </form>
+                <?php endif; ?>
+                <br/>
+                <form method="post" action="result_tour.php" style="display: inline;">
+    <!-- Conversion des noms en codes -->
+    <input type="hidden" name="duration" value="<?php echo $reservation['duration']; ?>">
+    <input type="hidden" name="first-theme" value="<?php echo $firstTheme; ?>">
+    <input type="hidden" name="first-region" value="<?php echo $firstRegion; ?>">
+    
+    <?php if ($reservation['duration'] == 10): ?>
+        <input type="hidden" name="second-theme" value="<?php echo $secondTheme; ?>">
+        <input type="hidden" name="second-region" value="<?php echo $secondRegion; ?>">
+    <?php endif; ?>
+    
+    <?php 
+    // Convertir la date du format français (dd/mm/yyyy) au format anglais (yyyy-mm-dd)
+    $dateParts = explode('/', $reservation['date']);
+    if (count($dateParts) === 3) {
+        $dateFormatted = $dateParts[2].'-'.$dateParts[1].'-'.$dateParts[0];
+    } else {
+        $dateFormatted = date('Y-m-d'); // Fallback to today if invalid format
+    }
+    ?>
+    
+    <input type="hidden" name="date" value="<?php echo $dateFormatted; ?>">
+    <input type="hidden" name="travelers" value="<?php echo $reservation['participants']; ?>">
+    
+    <?php
+    // Déterminer les codes de transport et hôtel
+    $transportCode = 'standard';
+    if ($reservation['transport'] == 'Confort') $transportCode = 'comfort';
+    if ($reservation['transport'] == 'Premium') $transportCode = 'premium';
+    
+    $hotelCode = 'standard';
+    if ($reservation['hotel'] == 'Confort') $hotelCode = 'comfort';
+    if ($reservation['hotel'] == 'Premium') $hotelCode = 'premium';
+    ?>
+    
+    <input type="hidden" name="transport" value="<?php echo $transportCode; ?>">
+    <input type="hidden" name="hotel" value="<?php echo $hotelCode; ?>">
+    
+    <?php
+    // Calcul du prix par personne
+    $pricePerPerson = $reservation['total_price'] / $reservation['participants'];
+    ?>
+    
+    <input type="hidden" name="total_price" value="<?php echo $pricePerPerson; ?>">
+    <input type="hidden" name="total_group_price" value="<?php echo $reservation['total_price']; ?>">
+    
+    <form method="post" action="result_tour.php" style="display: inline;">
+    <input type="hidden" name="duration" value="<?php echo $reservation['duration']; ?>">
+    <br/>
+                <a href = 'tour_details.php'>Voir le Pacours</a><br/>
+                <a onclick="window.location.href='profil.php'">Retour au profil</a>
             </div>
         </section>
     </main>

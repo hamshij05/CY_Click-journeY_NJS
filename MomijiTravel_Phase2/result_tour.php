@@ -11,6 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit;
 }
 
+require 'functions/functions.php';
+
 // Verify if the reservation is due
 if (isset($_POST['book_tour'])) {
     if (!$isLoggedIn) {
@@ -32,6 +34,7 @@ if (isset($_POST['book_tour'])) {
         $tourId = $_POST['tour_id'];
         $totalPrice = $_POST['total_price'];
         $totalGroupPrice = $_POST['total_group_price'];
+
         
         // add reservation for the users
         $filePath = 'users.json';
@@ -44,6 +47,7 @@ if (isset($_POST['book_tour'])) {
         foreach ($usersData['users'] as &$user) {
             if ($user['id'] === $_SESSION['user_id']) {
                 $reservation = [
+                    'id_tour' => uniqid(),
                     'date' => $dateFormatted,
                     'duration' => $duration,
                     'participants' => $travelers,
@@ -53,7 +57,8 @@ if (isset($_POST['book_tour'])) {
                     'theme1' => getThemeName($firstTheme),
                     'region2' => $duration == 10 ? getRegionName($secondRegion) : '',
                     'theme2' => $duration == 10 ? getThemeName($secondTheme) : '',
-                    'total_price' => $totalGroupPrice
+                    'total_price' => $totalGroupPrice,
+                    'status' => 'réservé'  
                 ];
 
                 // verify is reservation already existed
@@ -134,33 +139,8 @@ if ($duration == 10 && !empty($secondTheme) && !empty($secondRegion) && isset($s
     $secondItinerary = $scheduleData[$secondTheme][$secondRegion];
 }
 
-// Function to generate the price
-function generatePrice($theme, $region, $duration = 5, $transport = 'standard', $hotel = 'standard') {
-    $basePrice = 3500; // Prix de base par personne
-    
-    // Additional cost for regions
-    if ($region == 'kansai') {
-        $basePrice += 200; // Add 200€ for Kansai region
-    }
-    
-    // If it's a 5-day trip, the price is half of the 10-day price
-    if ($duration == 5) {
-        $basePrice = round($basePrice / 2);
-    }
 
-    // Additional cost for VIP transport and hotel
-    if ($transport == 'vip') {
-        $basePrice += 100; // Add 100€ for VIP transport
-    }
 
-    if ($hotel == 'vip') {
-        $basePrice += 150; // Add 150€ for VIP hotel
-    }
-    
-    return $basePrice;
-}
-    
-    
 
 // Calculate prices
 $firstPrice = generatePrice($firstTheme, $firstRegion, 5, $transport, $hotel);
@@ -192,44 +172,7 @@ if ($duration == 5) {
     $backgroundImage = "assets/images/{$firstRegion}-{$secondRegion}-mix.jpg";
 }
 
-// Function to get the full theme name
-function getThemeName($theme) {
-    $themeNames = [
-        'culture' => 'Culture & Temples',
-        'gastronomique' => 'Gastronomique & Traditionnel',
-        'détente' => 'Détente & Bien-être'
-    ];
-    return isset($themeNames[$theme]) ? $themeNames[$theme] : $theme;
-}
 
-// Function to get the full region name
-function getRegionName($region) {
-    $regionNames = [
-        'kanto' => 'Kanto (Tokyo et alentours)',
-        'kansai' => 'Kansai (Kyoto, Osaka, Nara, Kobe)',
-        'tohoku' => 'Tohoku (Nord du Japon)'
-    ];
-    return isset($regionNames[$region]) ? $regionNames[$region] : $region;
-}
-
-
-
-function getTransportName($transport) {
-    $transportNames = [
-        'vip' => 'Transport VIP',
-        'standard' => 'Transport Standard'
-    ];
-    return isset($transportNames[$transport]) ? $transportNames[$transport] : $transport;
-}
-
-
-function getHotelName($hotel) {
-    $hotelNames = [
-        'vip' => 'Hotel VIP',
-        'standard' => 'Hotel Standard'
-    ];
-    return isset($hotelNames[$hotel]) ? $hotelNames[$hotel] : $hotel;
-}
 ?>
 
 <!DOCTYPE html>
@@ -298,33 +241,52 @@ function getHotelName($hotel) {
                 <?php endif; ?>
                 <p class="total-price">Prix total: <?php echo $totalGroupPrice; ?>€ pour <?php echo $travelers; ?> voyageur<?php echo $travelers > 1 ? 's' : ''; ?></p>
                 <p>(<?php echo $totalPrice; ?>€ par personne)</p>
-            </div>
+            </div><br/>
             
-            <div class="booking-buttons">
-                <button type="submit" class="btn btn-search" onclick="window.location.href='search.php'">Modifier la recherche</button>
-                
-                <?php if ($isLoggedIn): ?>
-                    <form method="post" action=""> <!-- save info to put it in users.jsonn -->
-                        <input type="hidden" name="book_tour" value="1">
-                      
-                        <input type="hidden" name="duration" value="<?php echo $duration; ?>">
-                        <input type="hidden" name="first-theme" value="<?php echo $firstTheme; ?>">
-                        <input type="hidden" name="first-region" value="<?php echo $firstRegion; ?>">
-                        <input type="hidden" name="second-theme" value="<?php echo $secondTheme; ?>">
-                        <input type="hidden" name="second-region" value="<?php echo $secondRegion; ?>">
-                        <input type="hidden" name="date" value="<?php echo $date; ?>">
-                        <input type="hidden" name="travelers" value="<?php echo $travelers; ?>">
-                        <input type="hidden" name="transport" value="<?php echo $transport; ?>">
-                        <input type="hidden" name="hotel" value="<?php echo $hotel; ?>">
-                        <input type="hidden" name="tour_id" value="<?php echo $tourId; ?>">
-                        <input type="hidden" name="total_price" value="<?php echo $totalPrice; ?>">
-                        <input type="hidden" name="total_group_price" value="<?php echo $totalGroupPrice; ?>">
-                        <button type="submit" class="btn btn-search">Réserver ce voyage</button>
-                    </form>
-                <?php else: ?> <!-- if reserved, it will be saved in users.json  all the data of the travel -->
-                    <button type="button" class="btn btn-search" onclick="window.location.href='login.php?redirect=search'">Se connecter pour réserver</button>
-                <?php endif; ?>
-            </div>
+
+<div class="booking-buttons">
+    <button type="submit" class="btn btn-search" onclick="window.location.href='search.php'">Modifier la recherche</button>
+    
+    <?php if ($isLoggedIn): ?>
+        <br/><br/>
+        <form method="post" action=""> <!-- To reserved -->
+            <input type="hidden" name="book_tour" value="1">
+            <input type="hidden" name="duration" value="<?php echo $duration; ?>">
+            <input type="hidden" name="first-theme" value="<?php echo $firstTheme; ?>">
+            <input type="hidden" name="first-region" value="<?php echo $firstRegion; ?>">
+            <input type="hidden" name="second-theme" value="<?php echo $secondTheme; ?>">
+            <input type="hidden" name="second-region" value="<?php echo $secondRegion; ?>">
+            <input type="hidden" name="date" value="<?php echo $date; ?>">
+            <input type="hidden" name="travelers" value="<?php echo $travelers; ?>">
+            <input type="hidden" name="transport" value="<?php echo $transport; ?>">
+            <input type="hidden" name="hotel" value="<?php echo $hotel; ?>">
+            <input type="hidden" name="tour_id" value="<?php echo $tourId; ?>">
+            <input type="hidden" name="total_price" value="<?php echo $totalPrice; ?>">
+            <input type="hidden" name="total_group_price" value="<?php echo $totalGroupPrice; ?>">
+            <button type="submit" class="btn btn-search">Réserver ce voyage</button>
+        </form><br/>
+        
+
+        <!-- To pay -->
+        <form method="post" action="payment.php">
+            <input type="hidden" name="duration" value="<?php echo $duration; ?>">
+            <input type="hidden" name="first-theme" value="<?php echo $firstTheme; ?>">
+            <input type="hidden" name="first-region" value="<?php echo $firstRegion; ?>">
+            <input type="hidden" name="second-theme" value="<?php echo $secondTheme; ?>">
+            <input type="hidden" name="second-region" value="<?php echo $secondRegion; ?>">
+            <input type="hidden" name="date" value="<?php echo $date; ?>">
+            <input type="hidden" name="travelers" value="<?php echo $travelers; ?>">
+            <input type="hidden" name="transport" value="<?php echo $transport; ?>">
+            <input type="hidden" name="hotel" value="<?php echo $hotel; ?>">
+            <input type="hidden" name="tour_id" value="<?php echo $tourId; ?>">
+            <input type="hidden" name="total_price" value="<?php echo $totalPrice; ?>">
+            <input type="hidden" name="total_group_price" value="<?php echo $totalGroupPrice; ?>">
+            <button type="submit" class="btn btn-payment">Payer maintenant</button>
+        </form>
+    <?php else: ?>
+        <button type="button" class="btn btn-search" onclick="window.location.href='login_form.php?redirect=search'">Se connecter pour réserver</button>
+    <?php endif; ?>
+</div>
         </section>
     </main>
     

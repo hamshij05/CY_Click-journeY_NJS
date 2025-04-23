@@ -4,38 +4,7 @@ session_start();
 // Verify if the user is connected
 $isLoggedIn = isset($_SESSION['user_id']);
 
-// Check if the user is an admin
-//$isAdmin = false;
-//if ($isLoggedIn && isset($_SESSION['user_login']) && $_SESSION['user_login'] === 'admin') {
-  //  $isAdmin = true;
-//} else {
-    // Redirect to login page if not admin
-  //  header('Location: login.php');
-    //exit;
-//}
-
-// Function to get all users data
-function getAllUsers($filePath) {
-    if (file_exists($filePath)) {
-        $jsonData = file_get_contents($filePath);
-        return json_decode($jsonData, true);
-    }
-    return ["users" => []];
-}
-
-// Function to get profile picture path
-function getProfilePicture($userId) {
-    // Check for user's profile picture in common image formats
-    $formats = ['jpg', 'jpeg', 'png'];
-    foreach ($formats as $format) {
-        $path = "assets/images/profil/profile_{$userId}.{$format}";
-        if (file_exists($path)) {
-            return $path;
-        }
-    }
-    // Return default image if no custom profile picture exists
-    return 'assets/images/profil/profil.jpg';
-}
+require 'functions/functions.php'
 
 // Check if user ID is provided
 if (!isset($_GET['id'])) {

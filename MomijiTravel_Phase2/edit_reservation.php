@@ -4,6 +4,8 @@ session_start();
 // Verify if the user is connected
 $isLoggedIn = isset($_SESSION['user_id']);
 
+require 'functions/functions.php';
+
 // Determine which user ID to use
 if (isset($_GET['user_id'])) {
     $userId = $_GET['user_id'];
@@ -90,24 +92,6 @@ $firstTheme = '';
 $firstRegion = '';
 $secondTheme = '';
 $secondRegion = '';
-
-// Function to extract region code from full name
-function getRegionCode($fullName) {
-    if (strpos($fullName, 'Kantō') !== false) return 'kanto';
-    if (strpos($fullName, 'Kansai') !== false) return 'kansai';
-    if (strpos($fullName, 'Tōhoku') !== false) return 'tohoku';
-    return '';
-}
-
-// Function to extract theme code from full name
-function getThemeCode($fullName) {
-    if (strpos($fullName, 'Culture') !== false) return 'culture';
-    if (strpos($fullName, 'Gastronomique') !== false) return 'gastronomique';
-    if (strpos($fullName, 'Détente') !== false) return 'détente';
-    return '';
-}
-
-// Get region and theme codes
 $firstRegion = getRegionCode($reservation['region1']);
 $firstTheme = getThemeCode($reservation['theme1']);
 

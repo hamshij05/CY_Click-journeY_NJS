@@ -4,23 +4,7 @@ session_start();
 // Verify if the user is connected
 $isLoggedIn = isset($_SESSION['user_id']);
 
-// Function to validate the email
-function isValidEmail($email) {
-    return filter_var($email, FILTER_VALIDATE_EMAIL);
-}
-
-// Function to check if a login already exists
-function isLoginExists($login) {
-    $usersFile = file_get_contents('users.json');
-    $usersData = json_decode($usersFile, true);
-    
-    foreach ($usersData['users'] as $user) {
-        if ($user['login'] === $login) {
-            return true;
-        }
-    }
-    return false;
-}
+require 'functions/functions.php';
 
 // Process the form
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

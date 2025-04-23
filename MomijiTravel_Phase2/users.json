@@ -1,46 +1,26 @@
 {
     "users": [
         {
-            "id": "6802fe885370f",
+            "id": "6809742960b0f",
             "first_name": "Thuy Tran",
             "surname": "NGUYEN",
-            "email": "fennestyno@gmail.com",
+            "email": "trannguyen270605@gmail.com",
             "login": "aa",
-            "password": "$2y$10$zLAbKvWGdpWzQ\/WwB0W\/r.3RpMOHUvZoD.BySf9NxilMZLm5OSt3.",
+            "password": "$2y$10$b0SGZ.pKIcoSpW5GR8azV.RuFw\/wLC0djWnG6TqmXq\/P3zRpnDQ1.",
             "reservation": [
                 {
-                    "date": "26\/04\/2025",
+                    "id_tour": "6809751b4293a",
+                    "date": "07\/05\/2025",
                     "duration": "5",
-                    "participants": 1,
+                    "participants": "1",
                     "transport": "Transport VIP",
                     "hotel": "Hotel VIP",
-                    "region1": "Kantō (Tokyo et alentours)",
-                    "theme1": "Gastronomique & Traditionnel",
+                    "region1": "Kanto (Tokyo et alentours)",
+                    "theme1": "Culture & Temples",
                     "region2": "",
                     "theme2": "",
-                    "total_price": 2000
-                }
-            ]
-        },
-        {
-            "id": "6803126d4747d",
-            "first_name": "fenny",
-            "surname": "NO",
-            "email": "trannguyen270605@gmail.com",
-            "login": "NOU",
-            "password": "$2y$10$GIgj6ImNDTFDiskRlP04tOEHIOSzgsxZSwUmgNSaTkt.whMJOHD7G",
-            "reservation": [
-                {
-                    "date": "26\/04\/2025",
-                    "duration": "10",
-                    "participants": "1",
-                    "transport": "Transport Standard",
-                    "hotel": "Hotel Standard",
-                    "region1": "Kansai (Kyoto, Osaka, Nara, Kobe)",
-                    "theme1": "Gastronomique & Traditionnel",
-                    "region2": "Kanto (Tokyo et alentours)",
-                    "theme2": "Gastronomique & Traditionnel",
-                    "total_price": "3600"
+                    "total_price": "2000",
+                    "status": "réservé"
                 }
             ]
         }

@@ -2,6 +2,7 @@
 session_start();
 $isLoggedIn = isset($_SESSION['user_id']);
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -73,7 +74,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
 
                         <!--the ID is used here so the page know where to send the client on the tour page ( culture part, food part or detente part-->
                         <!-- required is to obligate the client before sending the form to choose an option and onchange is to modify dynamically the action attribute-->
-                        <select id="theme" name="theme" required onchange="this.form.action = 'tour.html#' + this.value;">
+                        <select id="theme" name="theme" required onchange="this.form.action = 'tour.php#' + this.value;">
                             <option value="">Choisir un thème</option>
                             <option value="culture">Culture & Temples </option>
                             <option value="food">Gastronomique & Traditionnel</option>

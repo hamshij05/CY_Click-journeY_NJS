@@ -291,6 +291,10 @@ input:focus, select:focus {
 
 }
 
+.journey-highlights p {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
 .highlights-list {
     max-width: 800px;
     margin: 2rem auto;

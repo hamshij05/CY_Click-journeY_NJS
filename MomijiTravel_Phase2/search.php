@@ -13,6 +13,46 @@ $errorMessage = '';
 if ($error === 'past_date') {
     $errorMessage = 'La date de départ doit être dans le futur.';
 }
+
+// Gestion de l'affichage des champs en fonction de la durée
+$duration = isset($_POST['duration']) ? $_POST['duration'] : '';
+
+// Définition des styles d'affichage pour chaque groupe de champs
+$firstThemeDisplay = "none";
+$firstRegionDisplay = "none";
+$secondThemeDisplay = "none";
+$secondRegionDisplay = "none";
+$transportDisplay = "none";
+$hotelDisplay = "none";
+
+// Définition des attributs 'required'
+$firstThemeRequired = "";
+$firstRegionRequired = "";
+$secondThemeRequired = "";
+$secondRegionRequired = "";
+
+// Si une durée est sélectionnée, mettre à jour l'affichage
+if (!empty($duration)) {
+    if ($duration === "5") {
+        $firstThemeDisplay = "block";
+        $firstRegionDisplay = "block";
+        $firstThemeRequired = "required";
+        $firstRegionRequired = "required";
+        $transportDisplay = "block";
+        $hotelDisplay = "block";
+    } elseif ($duration === "10") {
+        $firstThemeDisplay = "block";
+        $firstRegionDisplay = "block";
+        $secondThemeDisplay = "block";
+        $secondRegionDisplay = "block";
+        $firstThemeRequired = "required";
+        $firstRegionRequired = "required";
+        $secondThemeRequired = "required";
+        $secondRegionRequired = "required";
+        $transportDisplay = "block";
+        $hotelDisplay = "block";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,66 +67,6 @@ if ($error === 'past_date') {
     <meta name="description" content="Une page web d'agence de voyage au Japon en automne pour 5 ou 10 jours." />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
-
-    <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const durationSelect = document.getElementById('duration');
-                const firstThemeGroup = document.getElementById('first-theme-group');
-                const firstRegionGroup = document.getElementById('first-region-group');
-                const secondThemeGroup = document.getElementById('second-theme-group');
-                const secondRegionGroup = document.getElementById('second-region-group');
-                const transportGroup = document.getElementById('transport-group');
-                const hotelGroup = document.getElementById('hotel-group');
-            
-            // Initial setup
-            updateFormVisibility();
-            
-            // Event listener for duration change
-            durationSelect.addEventListener('change', updateFormVisibility);
-            
-            function updateFormVisibility() {
-                const duration = durationSelect.value;
-                
-                if (duration === "5") {
-                    firstThemeGroup.style.display = "block";
-                    firstRegionGroup.style.display = "block";
-                    secondThemeGroup.style.display = "none";
-                    secondRegionGroup.style.display = "none";
-                    transportGroup.style.display = "block";
-                    hotelGroup.style.display = "block";
-                    
-                    // Make sure second fields are not required
-                    document.getElementById('second-theme').required = false;
-                    document.getElementById('second-region').required = false;
-                    
-                    // First fields are required
-                    document.getElementById('first-theme').required = true;
-                    document.getElementById('first-region').required = true;
-                } else if (duration === "10") {
-                    firstThemeGroup.style.display = "block";
-                    firstRegionGroup.style.display = "block";
-                    secondThemeGroup.style.display = "block";
-                    secondRegionGroup.style.display = "block";
-                    transportGroup.style.display = "block";
-                    hotelGroup.style.display = "block";
-                    
-                    // All fields are required
-                    document.getElementById('first-theme').required = true;
-                    document.getElementById('first-region').required = true;
-                    document.getElementById('second-theme').required = true;
-                    document.getElementById('second-region').required = true;
-                } else {
-                    // Nothing selected, hide all specific fields
-                    firstThemeGroup.style.display = "none";
-                    firstRegionGroup.style.display = "none";
-                    secondThemeGroup.style.display = "none";
-                    secondRegionGroup.style.display = "none";
-                    transportGroup.style.display = "block";
-                    hotelGroup.style.display = "block";
-                }
-            }
-                    });
-    </script>
 </head>
 
 <body>
@@ -94,11 +74,10 @@ if ($error === 'past_date') {
         <h1>紅葉 Momiji Travel</h1>
         <!--Navigation part to navigate through different page-->
         <nav>
+            <a href="index.php">Accueil</a>
             <a href="presentation.php">Présentation</a>
-            <a href="search.php">Rechercher un voyage</a>
             <a href="tour.php">Les circuits typiques</a>
             <?php include 'nav.php'; ?> 
-
         </nav>
     </header>
 
@@ -117,20 +96,25 @@ if ($error === 'past_date') {
                 </div>
             <?php endif; ?>
 
-            <form class="search-form" action="result_tour.php" method="POST"> <!-- form submits to a new page -->
+            <form class="search-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" id="durationForm">
                 <div class="form-group">
                     <label for="duration">Durée du séjour :</label>
-                    <select id="duration" name="duration" required>
-                        <option value="">Choisir la durée</option>
-                        <option value="5">5 jours</option>
-                        <option value="10">10 jours</option>
+                    <select id="duration" name="duration" required onchange="this.form.submit()">
+                        <option value="" <?php echo empty($duration) ? 'selected' : ''; ?>>Choisir la durée</option>
+                        <option value="5" <?php echo $duration === '5' ? 'selected' : ''; ?>>5 jours</option>
+                        <option value="10" <?php echo $duration === '10' ? 'selected' : ''; ?>>10 jours</option>
                     </select>
                 </div>
+            </form>
+
+            <form class="search-form" action="result_tour.php" method="POST">
+                <!-- On garde la durée pour la soumettre dans le formulaire final -->
+                <input type="hidden" name="duration" value="<?php echo htmlspecialchars($duration); ?>">
 
                 <!-- First period fields (shown for both 5 and 10 days) -->
-                <div class="form-group" id="first-theme-group" style="display: none;">
+                <div class="form-group" id="first-theme-group" style="display: <?php echo $firstThemeDisplay; ?>;">
                     <label for="first-theme">Thème du voyage pour les premiers 5 jours :</label>
-                    <select id="first-theme" name="first-theme">
+                    <select id="first-theme" name="first-theme" <?php echo $firstThemeRequired; ?>>
                         <option value="">Choisir le thème</option>
                         <option value="culture">Culture & Temples</option>
                         <option value="gastronomique">Gastronomique & Traditionnel</option>
@@ -138,9 +122,9 @@ if ($error === 'past_date') {
                     </select>
                 </div>
 
-                <div class="form-group" id="first-region-group" style="display: none;">
+                <div class="form-group" id="first-region-group" style="display: <?php echo $firstRegionDisplay; ?>;">
                     <label for="first-region">Région pour les premiers 5 jours :</label>
-                    <select id="first-region" name="first-region">
+                    <select id="first-region" name="first-region" <?php echo $firstRegionRequired; ?>>
                         <option value="">Choisir la région</option>
                         <option value="kanto">Kantō (Tokyo et alentours)</option>
                         <option value="kansai">Kansai (Kyoto, Osaka, Nara, Kobe)</option>
@@ -149,9 +133,9 @@ if ($error === 'past_date') {
                 </div>
 
                 <!-- Second period fields (shown only for 10 days) -->
-                <div class="form-group" id="second-theme-group" style="display: none;">
+                <div class="form-group" id="second-theme-group" style="display: <?php echo $secondThemeDisplay; ?>;">
                     <label for="second-theme">Thème du voyage pour les 5 derniers jours :</label>
-                    <select id="second-theme" name="second-theme">
+                    <select id="second-theme" name="second-theme" <?php echo $secondThemeRequired; ?>>
                         <option value="">Choisir le thème</option>
                         <option value="culture">Culture & Temples</option>
                         <option value="gastronomique">Gastronomique & Traditionnel</option>
@@ -159,9 +143,9 @@ if ($error === 'past_date') {
                     </select>
                 </div>
 
-                <div class="form-group" id="second-region-group" style="display: none;">
+                <div class="form-group" id="second-region-group" style="display: <?php echo $secondRegionDisplay; ?>;">
                     <label for="second-region">Région pour les 5 derniers jours :</label>
-                    <select id="second-region" name="second-region">
+                    <select id="second-region" name="second-region" <?php echo $secondRegionRequired; ?>>
                         <option value="">Choisir la région</option>
                         <option value="kanto">Kantō (Tokyo et alentours)</option>
                         <option value="kansai">Kansai (Kyoto, Osaka, Nara, Kobe)</option>
@@ -174,18 +158,18 @@ if ($error === 'past_date') {
                     <input type="date" id="date" name="date" min="<?php echo $currentDate; ?>" required>
                 </div>
 
-                <div class="form-group" id="transport-group" style="display: none;">
+                <div class="form-group" id="transport-group" style="display: <?php echo $transportDisplay; ?>;">
                     <label for="transport">Type de transport :</label>
-                    <select id="transport" name="transport">
+                    <select id="transport" name="transport" required>
                         <option value="">Choisir type de transport</option>
                         <option value="vip">VIP ( + 100 euros)</option>
                         <option value="standard">Standard</option>
                     </select>
                 </div>
 
-                <div class="form-group" id="hotel-group" style="display: none;">
+                <div class="form-group" id="hotel-group" style="display: <?php echo $hotelDisplay; ?>;">
                     <label for="hotel">Type de Hotel :</label>
-                    <select id="hotel" name="hotel">
+                    <select id="hotel" name="hotel" required>
                         <option value="">Choisir type de Hotel</option>
                         <option value="vip">VIP ( + 150 euros)</option>
                         <option value="standard">Standard</option>
@@ -197,7 +181,9 @@ if ($error === 'past_date') {
                     <input type="number" id="travelers" name="travelers" min="1" max="15" required>
                 </div>
 
-                <button type="submit" class="btn btn-search">Rechercher</button>
+                <?php if (!empty($duration)): ?>
+                    <button type="submit" class="btn btn-search">Rechercher</button>
+                <?php endif; ?>
             </form>
         </section>
 
@@ -209,13 +195,13 @@ if ($error === 'past_date') {
                         <h4>Circuit Classique <em>Kanto - Kansai (Culture & Temples)</em></h4>
                         <p>10 jours de découverte des temples et jardins</p>
                         <span class="price">À partir de 3300€</span>
-                        <a href="all_tour_details/tour_kanto_kansai_culture.html">Découvrir</a>
+                        <a href="all_tour_details/tour_kanto_kansai_culture.php">Découvrir</a>
                     </div>
                     <div class="tour-card">
                         <h4>Circuit inoubliable favorite <em>Kanto - Kansai (Gastronomique & Traditionnel)</em> </h4>
                         <p>Entre tradition et modernité</p>
                         <span class="price">À partir de 3500€</span>
-                        <a href="all_tour_details/tour_kanto_kansai_food.html">Découvrir</a>
+                        <a href="all_tour_details/tour_kanto_kansai_food.php">Découvrir</a>
                     </div>
                 </div>
             </section>

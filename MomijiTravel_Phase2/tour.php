@@ -13,6 +13,9 @@ $errorMessage = '';
 if ($error === 'past_date') {
     $errorMessage = 'La date de départ doit être dans le futur.';
 }
+
+require 'functions/functions.php'
+
 ?>
 
 <!DOCTYPE html>

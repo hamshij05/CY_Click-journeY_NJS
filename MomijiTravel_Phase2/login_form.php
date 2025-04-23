@@ -1,32 +1,15 @@
 <?php
 session_start();
 
+require 'functions/functions.php';
+
 // Verify if the user is already connected
 if (isset($_SESSION['user_id'])) {
     header('Location: index.php');
     exit;
 }
 
-// Function to verify credentials
-function verifyCredentials($login, $password) {
-    if (!file_exists('users.json')) {
-        return ['error' => 'Erreur système, veuillez réessayer plus tard'];
-    }
-    
-    $usersData = json_decode(file_get_contents('users.json'), true);
-    
-    foreach ($usersData['users'] as $user) {
-        if ($user['login'] === $login) {
-            if (password_verify($password, $user['password'])) {
-                return ['success' => true, 'user' => $user];
-            } else {
-                return ['error' => 'Mot de passe incorrect'];
-            }
-        }
-    }
-    
-    return ['error' => 'Identifiant non trouvé'];
-}
+
 
 // Traitement du formulaire de connexion
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -4,24 +4,8 @@ session_start();
 // Verify if the user is connected
 $isLoggedIn = isset($_SESSION['user_id']);
 
-// Check if the user is an admin
-// $isAdmin = false;
-// if ($isLoggedIn && isset($_SESSION['user_login']) && $_SESSION['user_login'] === 'admin') {
-   // $isAdmin = true;
-//} else {
-    // Redirect to login page if not admin
-  //  header('Location: login_form.php');
-    //exit;
-//}
 
-// Function to get all users data
-function getAllUsers($filePath) {
-    if (file_exists($filePath)) {
-        $jsonData = file_get_contents($filePath);
-        return json_decode($jsonData, true);
-    }
-    return ["users" => []];
-}
+require 'functions/functions.php';
 
 // Load users data
 $usersFile = "users.json";
@@ -34,6 +18,8 @@ $filterStatus = isset($_GET['status']) ? $_GET['status'] : '';
 
 // Initialize filtered users array
 $filteredUsers = [];
+
+
 
 // Apply filters
 foreach ($users as $user) {

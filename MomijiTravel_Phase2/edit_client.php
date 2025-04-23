@@ -4,40 +4,9 @@ session_start();
 // Verify if the user is connected
 $isLoggedIn = isset($_SESSION['user_id']);
 
-// Check if the user is an admin
-//$isAdmin = false;
-//if ($isLoggedIn && isset($_SESSION['user_login']) && $_SESSION['user_login'] === 'admin') {
-  //  $isAdmin = true;
-//} else {
-    // Redirect to login page if not admin
-  //  header('Location: login.php');
-   // exit;
-//}
 
-// Function to get all users data
-function getAllUsers($filePath) {
-    if (file_exists($filePath)) {
-        $jsonData = file_get_contents($filePath);
-        return json_decode($jsonData, true);
-    }
-    return ["users" => []];
-}
+require 'functions/functions.php';
 
-// Function to update user data
-function updateUserData($filePath, $userId, $userData) {
-    $allUsers = getAllUsers($filePath);
-    
-    foreach ($allUsers['users'] as $key => $user) {
-        if ($user['id'] === $userId) {
-            // Merge the new data with the existing user data
-            // This preserves fields we don't want to change (like password)
-            $allUsers['users'][$key] = array_merge($user, $userData);
-            break;
-        }
-    }
-    
-    return file_put_contents($filePath, json_encode($allUsers, JSON_PRETTY_PRINT));
-}
 
 // Check if user ID is provided
 if (!isset($_GET['id'])) {
@@ -116,19 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Get profile picture path
-function getProfilePicture($userId) {
-    // Check for user's profile picture in common image formats
-    $formats = ['jpg', 'jpeg', 'png'];
-    foreach ($formats as $format) {
-        $path = "assets/images/profil/profile_{$userId}.{$format}";
-        if (file_exists($path)) {
-            return $path;
-        }
-    }
-    // Return default image if no custom profile picture exists
-    return 'assets/images/profil/profil.jpg';
-}
+
 
 $profilePicture = getProfilePicture($userId);
 ?>
