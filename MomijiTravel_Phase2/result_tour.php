@@ -164,13 +164,7 @@ if ($duration == 10) {
 
 $tourId .= '-' . date('Ymd', strtotime($date));
 
-// Generate background image based on regions
-$backgroundImage = '';
-if ($duration == 5) {
-    $backgroundImage = "assets/images/{$firstRegion}-{$firstTheme}.jpg";
-} else {
-    $backgroundImage = "assets/images/{$firstRegion}-{$secondRegion}-mix.jpg";
-}
+
 
 
 ?>
@@ -201,7 +195,9 @@ if ($duration == 5) {
     </header>
 
     <main>
-        <section class="journey-highlights" style="background-image: url('<?php echo $backgroundImage; ?>') ;">
+    <section class="journey-highlights" style="background-image: url('assets/images/<?php echo $firstTheme; ?>.jpg');">
+
+
             <h2>Votre circuit personnalisé</h2>
             
             <div class="journey-info"> <!-- info of the reservation -->
@@ -211,7 +207,7 @@ if ($duration == 5) {
                 <p><strong>Type de Transport:</strong> <?php echo $transport; ?></p>
                 <p><strong>Type de Hotel:</strong> <?php echo $hotel; ?></p>
             </div>
-            
+            <?php echo $firstTheme?>
             <?php if (($duration == 5 || $duration == 10) && !empty($firstItinerary)): ?>
                 <h3>5 Jours à <?php echo getRegionName($firstRegion); ?> (<?php echo getThemeName($firstTheme); ?>)</h3>
                 <p>Vous séjournerez pendant 5 jours dans différents hébergements de luxe, idéalement situés pour visiter tous les sites touristiques.</p>
@@ -291,5 +287,3 @@ if ($duration == 5) {
     </main>
     
     <?php include 'footer.php'; ?>
-</body>
-</html>

@@ -34,6 +34,7 @@ $hotel = $_POST['hotel'];
 $tourId = $_POST['tour_id'];
 $totalPrice = $_POST['total_price'];
 $totalGroupPrice = $_POST['total_group_price'];
+$reservationId = isset($_POST['reservation_id']) ? $_POST['reservation_id'] : '';
 
 // Format the price for CY Bank (with 2 decimal places)
 $formattedPrice = number_format($totalGroupPrice, 2, '.', '');
@@ -56,6 +57,7 @@ $controlValue = md5($apiKey . "#" . $transactionId . "#" . $formattedPrice . "#"
 
 // Store the transaction details in session for later verification
 $_SESSION['payment_details'] = [
+    'reservation_id' => $reservationId,
     'transaction_id' => $transactionId,
     'amount' => $formattedPrice,
     'tour_id' => $tourId,

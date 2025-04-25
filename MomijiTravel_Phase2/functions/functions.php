@@ -151,6 +151,22 @@ function getRegionName($region) {
     return isset($regionNames[$region]) ? $regionNames[$region] : $region;
 }
 
+function getRegionValue($region){
+    $regionName = [
+        'Kanto (Tokyo et alentours)' =>'kanto',
+        'Kansai (Kyoto, Osaka, Nara, Kobe)' => 'kansai',
+        'Tohoku (Nord du Japon)' => 'tohoku'
+    ];
+    return isset($regionName[$region]) ? $regionName[$region] : $region;
+}
 
+function getThemeValue($theme) {
+    $themeNames = [
+        'Culture & Temples' => 'culture',
+        'Gastronomique & Traditionnel' => 'gastronomique',
+        'Détente & Bien-être' => 'détente'
+    ];
+    return $themeNames[$theme] ?? $theme;
+}
 
 ?>

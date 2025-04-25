@@ -10,13 +10,9 @@ if (!$isLoggedIn) {
     exit;
 }
 
-require 'functions/functions.php';
-
 // Initialize message variable
 $message = '';
 $messageClass = '';
-
-
 
 // Check if the reservation index is provided
 if (!isset($_GET['index']) || !is_numeric($_GET['index'])) {
@@ -57,6 +53,47 @@ if ($reservation === null) {
     exit;
 }
 
+// Function to generate the price
+function generatePrice($theme, $region, $duration = 5, $transport = 'standard', $hotel = 'standard') {
+    $basePrice = 3500; // Prix de base par personne
+    
+    // Additional cost for regions
+    if ($region == 'kansai') {
+        $basePrice += 200; // Add 200€ for Kansai region
+    }
+    
+    // If it's a 5-day trip, the price is half of the 10-day price
+    if ($duration == 5) {
+        $basePrice = round($basePrice / 2);
+    }
+
+    // Additional cost for VIP transport and hotel
+    if ($transport == 'vip') {
+        $basePrice += 100; // Add 100€ for VIP transport
+    }
+
+    if ($hotel == 'vip') {
+        $basePrice += 150; // Add 150€ for VIP hotel
+    }
+    
+    return $basePrice;
+}
+
+// Function to extract region code from full name
+function getRegionCode($fullName) {
+    if (strpos($fullName, 'Kantō') !== false || strpos($fullName, 'Kanto') !== false) return 'kanto';
+    if (strpos($fullName, 'Kansai') !== false) return 'kansai';
+    if (strpos($fullName, 'Tōhoku') !== false || strpos($fullName, 'Tohoku') !== false) return 'tohoku';
+    return '';
+}
+
+// Function to extract theme code from full name
+function getThemeCode($fullName) {
+    if (strpos($fullName, 'Culture') !== false) return 'culture';
+    if (strpos($fullName, 'Gastronomique') !== false) return 'gastronomique';
+    if (strpos($fullName, 'Détente') !== false || strpos($fullName, 'Detente') !== false) return 'détente';
+    return '';
+}
 
 // Process form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -185,7 +185,12 @@ $profilePicture = getProfilePicture($userId);
                                         <strong>Thème 2:</strong> <?php echo htmlspecialchars($reservation['theme2']); ?>
                                     <?php endif; ?>
                                 </p>
-                                <div class="reservation-price"><strong>Prix total:</strong> <?php echo htmlspecialchars($reservation['total_price']); ?>€</div><br/>
+                                <div class="reservation-price"><strong>Prix total:</strong> <?php echo htmlspecialchars($reservation['total_price']); ?>€</div>
+                                <?php if ($reservation['status'] == 'payé'): ?>
+                                    <strong>Déjà Payé!</strong>
+                                <?php endif; ?>
+                                <br/><br/>
+
                             </a>
                         <?php endforeach; ?>
                     </section>

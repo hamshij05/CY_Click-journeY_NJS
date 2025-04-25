@@ -286,14 +286,16 @@ input:focus, select:focus {
     margin-top: 4rem;
     background-position: center;     					  
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: rgba(0, 0, 0, 0.9); 
     background-blend-mode: darken;
 
 }
 
 .journey-highlights p {
     font-family: 'Noto Sans JP', sans-serif;
+    font-size: 2rem; 
 }
+
 
 .highlights-list {
     max-width: 800px;
@@ -305,7 +307,7 @@ input:focus, select:focus {
     font-family: 'Noto Sans JP', sans-serif;
     padding: 1rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
- 
+    font-size: 1.8rem; 
     padding-left: 2rem;
 }
 

@@ -41,57 +41,83 @@ if (isset($_GET['transaction']) && isset($_GET['montant']) && isset($_GET['vende
             if (isset($_SESSION['payment_details']) && $transactionId === $_SESSION['payment_details']['transaction_id']) {
                 // Get payment details
                 $paymentDetails = $_SESSION['payment_details'];
-                
+
                 // Update the user's data in the JSON file
-                $filePath = 'users.json';
-                $usersData = json_decode(file_get_contents($filePath), true);
-                
-                // Format the date for display
-                $dateFormatted = date("d/m/Y", strtotime($paymentDetails['date']));
-                
-                // Find user to add new info
-                foreach ($usersData['users'] as &$user) {
-                    if ($user['id'] === $userId) {
-                        $reservation = [
-                            'date' => $dateFormatted,
-                            'duration' => $paymentDetails['duration'],
-                            'participants' => $paymentDetails['travelers'],
-                            'transport' => getTransportName($paymentDetails['transport']),
-                            'hotel' => getHotelName($paymentDetails['hotel']),
-                            'region1' => getRegionName($paymentDetails['first_region']),
-                            'theme1' => getThemeName($paymentDetails['first_theme']),
-                            'region2' => $paymentDetails['duration'] == 10 ? getRegionName($paymentDetails['second_region']) : '',
-                            'theme2' => $paymentDetails['duration'] == 10 ? getThemeName($paymentDetails['second_theme']) : '',
-                            'total_price' => $amount,
-                            'status' => 'payé',
-                            'transaction_id' => $transactionId
-                        ];
-                        
-                        // Check if reservation already exists
-                        $isDuplicate = false;
-                        if (isset($user['reservation']) && is_array($user['reservation'])) {
-                            foreach ($user['reservation'] as $existingReservation) {
-                                if (isset($existingReservation['transaction_id']) && 
-                                    $existingReservation['transaction_id'] === $transactionId) {
-                                    $isDuplicate = true;
-                                    break;
-                                }
-                            }
-                        }
-                        
-                        // Add payment info if not a duplicate
-                        if (!$isDuplicate) {
-                            if (!isset($user['reservation'])) {
-                                $user['reservation'] = [];
-                            }
-                            $user['reservation'][] = $reservation;
-                            
-                            // Save the edited file
-                            file_put_contents($filePath, json_encode($usersData, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-                        }
+$filePath = 'users.json';
+$usersData = json_decode(file_get_contents($filePath), true);
+
+// Format the date for display
+$dateFormatted = date("d/m/Y", strtotime($paymentDetails['date']));
+
+// Vérifier si cette transaction correspond à une réservation existante
+$foundExistingReservation = false;
+
+// Find user to update or add info
+foreach ($usersData['users'] as &$user) {
+    if ($user['id'] === $userId) {
+ 
+        if (isset($user['reservation']) && is_array($user['reservation'])) {
+            foreach ($user['reservation'] as &$existingReservation) {
+                // if find the right reservation to update
+                if (isset($existingReservation['id_tour']) && 
+                    $existingReservation['id_tour'] === $paymentDetails['tour_id'] &&
+                    $existingReservation['status'] === 'réservé') {
+                    
+                    // update
+                    $existingReservation['status'] = 'payé';
+                    $existingReservation['transaction_id'] = $transactionId;
+                    $foundExistingReservation = true;
+                    break;
+                }
+            }
+        }
+        
+        // if no reservation found
+        if (!$foundExistingReservation) {
+            $reservation = [
+                'id_tour' => $paymentDetails['tour_id'],
+                'date' => $dateFormatted,
+                'duration' => $paymentDetails['duration'],
+                'participants' => $paymentDetails['travelers'],
+                'transport' => getTransportName($paymentDetails['transport']),
+                'hotel' => getHotelName($paymentDetails['hotel']),
+                'region1' => getRegionName($paymentDetails['first_region']),
+                'theme1' => getThemeName($paymentDetails['first_theme']),
+                'region2' => $paymentDetails['duration'] == 10 ? getRegionName($paymentDetails['second_region']) : '',
+                'theme2' => $paymentDetails['duration'] == 10 ? getThemeName($paymentDetails['second_theme']) : '',
+                'total_price' => $amount,
+                'status' => 'payé',
+                'transaction_id' => $transactionId
+            ];
+            
+
+            $isDuplicate = false;
+            if (isset($user['reservation']) && is_array($user['reservation'])) {
+                foreach ($user['reservation'] as $checkReservation) {
+                    if (isset($checkReservation['transaction_id']) && 
+                        $checkReservation['transaction_id'] === $transactionId) {
+                        $isDuplicate = true;
                         break;
                     }
                 }
+            }
+            
+
+            if (!$isDuplicate) {
+                if (!isset($user['reservation'])) {
+                    $user['reservation'] = [];
+                }
+                $user['reservation'][] = $reservation;
+            }
+        }
+        
+
+        file_put_contents($filePath, json_encode($usersData, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        break;
+    }
+}
+                
+              
                 
                 // Clear the payment details from session
                 unset($_SESSION['payment_details']);

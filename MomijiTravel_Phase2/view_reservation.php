@@ -73,6 +73,9 @@ foreach ($usersData['users'] as $user) {
     }
 }
 
+
+
+
 // If reservation not found, redirect to profile
 if ($reservation === null) {
     header('Location: profil.php');
@@ -121,7 +124,24 @@ if ($reservation['duration'] === '5') {
 
 // Format date from the reservation format
 $formattedDate = $reservation['date']; // Already in display format
+$duration = $reservation['duration'];
+$travelers = $reservation['participants'];
+$transport = $reservation['transport'];
+$hotel = $reservation['hotel']; 
+$totalGroupPrice = $reservation['total_price'];
 
+// Generate a unique tour ID - fixing null strings issue
+$tourId = 'MT-';
+$tourId .= !empty($firstRegion) ? strtoupper(substr($firstRegion, 0, 2)) : 'XX';
+$tourId .= !empty($firstTheme) ? strtoupper(substr($firstTheme, 0, 1)) : 'X';
+
+if ($duration == 10) {
+    $tourId .= '-';
+    $tourId .= !empty($secondRegion) ? strtoupper(substr($secondRegion, 0, 2)) : 'XX';
+    $tourId .= !empty($secondTheme) ? strtoupper(substr($secondTheme, 0, 1)) : 'X';
+}
+
+$tourId .= '-' . date('Ymd', strtotime($formattedDate));
 
 
 
@@ -236,7 +256,7 @@ $formattedDate = $reservation['date']; // Already in display format
     <form method="post" action="result_tour.php" style="display: inline;">
     <input type="hidden" name="duration" value="<?php echo $reservation['duration']; ?>">
     <br/>
-                <a href = 'tour_details.php'>Voir le Pacours</a><br/>
+                <a href="tour_details.php?reservation_id=<?php echo $reservation['id_tour']; ?>">Voir le Parcours (et payé si non payé)</a><br/>
                 <a onclick="window.location.href='profil.php'">Retour au profil</a>
             </div>
         </section>

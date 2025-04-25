@@ -9,20 +9,44 @@
             "password": "$2y$10$b0SGZ.pKIcoSpW5GR8azV.RuFw\/wLC0djWnG6TqmXq\/P3zRpnDQ1.",
             "reservation": [
                 {
-                    "id_tour": "6809751b4293a",
-                    "date": "07\/05\/2025",
+                    "id_tour": "68098014e51fc",
+                    "date": "27\/04\/2025",
                     "duration": "5",
+                    "participants": "1",
+                    "transport": "Transport VIP",
+                    "hotel": "Hotel VIP",
+                    "region1": "Kansai (Kyoto, Osaka, Nara, Kobe)",
+                    "theme1": "Culture & Temples",
+                    "region2": "",
+                    "theme2": "",
+                    "total_price": "2100",
+                    "status": "pay\u00e9",
+                    "transaction_id": "MT17456072590f35625fe6"
+                },
+                {
+                    "id_tour": "680bbe9c02ddc",
+                    "date": "29\/04\/2025",
+                    "duration": "10",
                     "participants": "1",
                     "transport": "Transport VIP",
                     "hotel": "Hotel VIP",
                     "region1": "Kanto (Tokyo et alentours)",
                     "theme1": "Culture & Temples",
-                    "region2": "",
-                    "theme2": "",
-                    "total_price": "2000",
-                    "status": "réservé"
+                    "region2": "Kanto (Tokyo et alentours)",
+                    "theme2": "Culture & Temples",
+                    "total_price": "4000",
+                    "status": "pay\u00e9",
+                    "transaction_id": "MT1745607226f9694ffa3b"
                 }
             ]
+        },
+        {
+            "id": "680be1a1de6c5",
+            "first_name": "fennoux",
+            "surname": "NO",
+            "email": "fennestyno@gmail.com",
+            "login": "FENOUX",
+            "password": "$2y$10$ESLoLd2mYEsoV9nISrz6CeZLtn7xXp8x05x.b9jBfhla08KJXO4Xq"
         }
     ]
 }
