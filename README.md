@@ -50,8 +50,16 @@ Le projet est divisé en plusieurs phases :
 
 ## Installation  
 #  Prérequis
-Pour faire fonctionner l'ensemble du projet :  
-Un environnement serveur local installé WAMP Serveur sur votre machine (alternative comme XAMPP)   
+Un environnement serveur local installé **WAMP Server** sur votre machine (alternative comme XAMPP)  
+PHP inclus dans l'environnement serveur  
+
+1. Téléchargement et installation WAMP Server  
+   + Téléchargez **WAMP Server** depuis le site officiel et installez-le sur votre machine.
+   + Ouvrez le peanneau de contrôle de WAMP et démarrez Apache.  
+2. Configuration de la base de données  
+   + Ouvre
+3. COnfiguration du projet
+   + Placez le dossier du projet dans le répertoire `www` de WAMP : 
 
 1. Télécharger le fichier ZIP du projet depuis GitHub. 
 2. Extraire le contenu du fichier ZIP dans un dossier de votre choix (de préférence présentation)
