@@ -52,6 +52,7 @@ Le projet est divisé en plusieurs phases :
 1. Télécharger le fichier ZIP du projet depuis GitHub. 
 2. Extraire le contenu du fichier ZIP dans un dossier de votre choix (de préférence présentation)
 Extraire le contenu du fichier ZIP dans un dossier de votre choix.
+Extraire les 
 
 ## Fonctionnalités du site     
 **`index.html`** : Page d'accueil présentant les principales informations et attractions du site  
