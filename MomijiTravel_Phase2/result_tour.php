@@ -207,7 +207,7 @@ $tourId .= '-' . date('Ymd', strtotime($date));
                 <p><strong>Type de Transport:</strong> <?php echo $transport; ?></p>
                 <p><strong>Type de Hotel:</strong> <?php echo $hotel; ?></p>
             </div>
-            <?php echo $firstTheme?>
+
             <?php if (($duration == 5 || $duration == 10) && !empty($firstItinerary)): ?>
                 <h3>5 Jours à <?php echo getRegionName($firstRegion); ?> (<?php echo getThemeName($firstTheme); ?>)</h3>
                 <p>Vous séjournerez pendant 5 jours dans différents hébergements de luxe, idéalement situés pour visiter tous les sites touristiques.</p>

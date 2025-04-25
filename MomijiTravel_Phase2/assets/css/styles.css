@@ -293,7 +293,7 @@ input:focus, select:focus {
 
 .journey-highlights p {
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 2rem; 
+
 }
 
 
@@ -307,7 +307,7 @@ input:focus, select:focus {
     font-family: 'Noto Sans JP', sans-serif;
     padding: 1rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    font-size: 1.8rem; 
+    font-size: 1.25rem;
     padding-left: 2rem;
 }
 

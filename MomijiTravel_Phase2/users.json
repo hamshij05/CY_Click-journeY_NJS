@@ -47,6 +47,30 @@
             "email": "fennestyno@gmail.com",
             "login": "FENOUX",
             "password": "$2y$10$ESLoLd2mYEsoV9nISrz6CeZLtn7xXp8x05x.b9jBfhla08KJXO4Xq"
+        },
+        {
+            "id": "680bfe002a125",
+            "first_name": "aa",
+            "surname": "aaa",
+            "email": "trannguyen@gmail.com",
+            "login": "aaaa",
+            "password": "$2y$10$c.JpEGxJ8.1e9kC\/C1VLwOWwfvFsHe7.PXJQStywdNhpNZVvvMmX.",
+            "reservation": [
+                {
+                    "id_tour": "680bfe5933a48",
+                    "date": "01\/06\/2026",
+                    "duration": "10",
+                    "participants": "1",
+                    "transport": "Transport VIP",
+                    "hotel": "Hotel Standard",
+                    "region1": "Kansai (Kyoto, Osaka, Nara, Kobe)",
+                    "theme1": "Culture & Temples",
+                    "region2": "Kanto (Tokyo et alentours)",
+                    "theme2": "Gastronomique & Traditionnel",
+                    "total_price": "3800",
+                    "status": "r\u00e9serv\u00e9"
+                }
+            ]
         }
     ]
 }

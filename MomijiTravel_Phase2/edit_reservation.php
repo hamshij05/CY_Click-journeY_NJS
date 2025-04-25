@@ -155,7 +155,7 @@ $formattedDate = $reservation['date']; // Already in display format
     </header>
 
     <main>
-        <section class="journey-highlights" style="background-image: url('<?php echo $backgroundImage; ?>') ;">
+        <section class="journey-highlights" style="background-image: url('assets/images/<?php echo $firstTheme; ?>.jpg');">
             <h2>Le circuit réservé de <?php echo htmlspecialchars($user['first_name']); ?> <?php echo htmlspecialchars($user['surname']); ?></h2>
             
             <div class="journey-info">

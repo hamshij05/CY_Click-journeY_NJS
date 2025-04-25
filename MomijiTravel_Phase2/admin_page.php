@@ -143,6 +143,7 @@ foreach ($users as $user) {
                                                 <?php if (!empty($reservation['region2'])): ?>
                                                     , <?php echo htmlspecialchars($reservation['region2']); ?>
                                                 <?php endif; ?>
+                                                <strong><?php echo htmlspecialchars($reservation['status']); ?> </strong>
                                             </li>
                                         <?php endforeach; ?>
                                     </ul>
