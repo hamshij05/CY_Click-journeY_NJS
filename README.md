@@ -25,7 +25,6 @@ Le projet est divisé en plusieurs phases :
 4. **`Phase 4`** : Requêtes asynchrones pour optimiser l’expérience utilisateur  
 
 ## Langages    
-**Phase 1** :  
 
 [HTML]: https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [HTML-url]: https://developer.mozilla.org/fr/docs/Web/HTML
@@ -41,6 +40,13 @@ Le projet est divisé en plusieurs phases :
 [php-url]: https://developer.mozilla.org/fr/docs/Glossary/PHP
 
 [![php][php]][php-url]
+
+[javascript]: https://shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000&style=flat-square
+[javascript-url]: https://developer.mozilla.org/fr/docs/Web/JavaScript
+
+[![javascript][javascript]][javascript-url]
+
+
 
 ## Installation   
 1. Télécharger le fichier ZIP du projet depuis GitHub. 
