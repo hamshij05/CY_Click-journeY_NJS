@@ -48,7 +48,11 @@ Le projet est divisé en plusieurs phases :
 
 
 
-## Installation   
+## Installation  
+#  Prérequis
+Pour faire fonctionner l'ensemble du projet :  
+Un environnement serveur local installé WAMP Serveur sur votre machine (alternative comme XAMPP)   
+
 1. Télécharger le fichier ZIP du projet depuis GitHub. 
 2. Extraire le contenu du fichier ZIP dans un dossier de votre choix (de préférence présentation)
 Extraire le contenu du fichier ZIP dans un dossier de votre choix.
@@ -60,10 +64,14 @@ Extraire les
 **`login_form.html`** : formulaire de connexion pour les utilisateurs et administrateurs  
 **`sign_up.html`** : formulaire d'inscription pour créer un compte utilisateur  
 **`tour.html`** : page listant les circuits touristiques diponibles avec descriptions et liens vers les détails des voyages  
-**`presentation.html`** : présentation de l'agence, ses valeurs et recherche de circuits par thème     
+**`presentation.html`** : présentation de l'agence, ses valeurs et recherche de circuits par thème   
+**`users.json`** : données des utilisateurs  
+schedule.json : informations sur les circuits et horaires
 **`assets`** contient les fichiers CSS et les images utilisées sur nos pages  
 
 ## Auteurs    
 - **Hamshigaa JEKUMAR** - hamshij05  
 - **Thuy Tran NGUYEN** - thfennesty  
-- **Elsa SANCHEZ** - elsw3 
+- **Elsa SANCHEZ** - elsw3
+
+----Projet développé dans le cadre d'un projet universitaire----
