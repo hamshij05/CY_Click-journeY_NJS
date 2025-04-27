@@ -77,57 +77,61 @@ Extraire les
 schedule.json : informations sur les circuits et horaires
 **`assets`** contient les fichiers CSS et les images utilisées sur nos pages  
 
-##Aborescence
 
-MomijiTravel_Phase2/
+
+## Arborescence du projet
+
+```
+📁 MomijiTravel_Phase2
+├── 📁 all_tour_details
+│   ├── 📄 nav.php
+│   ├── 📄 tour_kansai_tohoku_culture.php
+│   ├── 📄 tour_kansai_tohoku_detente.php
+│   ├── 📄 tour_kansai_tohoku_food.php
+│   ├── 📄 tour_kanto_kansai_culture.php
+│   ├── 📄 tour_kanto_kansai_detente.php
+│   ├── 📄 tour_kanto_kansai_food.php
+│   ├── 📄 tour_kanto_tohoku_culture.php
+│   ├── 📄 tour_kanto_tohoku_detente.php
+│   └── 📄 tour_kanto_tohoku_food.php
 │
-├── all_tour_details/
-│   ├── nav.php
-│   ├── tour_kansai_tohoku_culture.php
-│   ├── tour_kansai_tohoku_detente.php
-│   ├── tour_kansai_tohoku_food.php
-│   ├── tour_kanto_kansai_culture.php
-│   ├── tour_kanto_kansai_detente.php
-│   ├── tour_kanto_kansai_food.php
-│   ├── tour_kanto_tohoku_culture.php
-│   ├── tour_kanto_tohoku_detente.php
-│   └── tour_kanto_tohoku_food.php
+├── 📁 assets
+│   ├── 📁 css
+│   │   └── 📄 styles.css
+│   └── 📁 images
+│       └── 📄 (images)
 │
-├── assets/
-│   ├── css/
-│   │   └── styles.css
-│   └── images/
-│       └── (tes images sont ici)
+├── 📁 functions
+│   └── 📄 functions.php
 │
-├── functions/
-│   └── functions.php
+├── 📁 uploads
+│   └── 📄 (uploads)
 │
-├── uploads/
-│   └── (contenu non précisé)
-│
-├── admin_page.php
-├── edit_client.php
-├── edit_reservation.php
-├── footer.php
-├── getapikey.php
-├── index.php
-├── login_form.php
-├── logout.php
-├── modify_reservation.php
-├── nav.php
-├── payment.php
-├── payment_return.php
-├── presentation.php
-├── profil.php
-├── result_tour.php
-├── schedule.json
-├── search.php
-├── sign_up.php
-├── tour.php
-├── tour_details.php
-├── users.json
-├── view_client.php
-└── view_reservation.php
+├── 📄 admin_page.php
+├── 📄 edit_client.php
+├── 📄 edit_reservation.php
+├── 📄 footer.php
+├── 📄 getapikey.php
+├── 📄 index.php
+├── 📄 login_form.php
+├── 📄 logout.php
+├── 📄 modify_reservation.php
+├── 📄 nav.php
+├── 📄 payment.php
+├── 📄 payment_return.php
+├── 📄 presentation.php
+├── 📄 profil.php
+├── 📄 result_tour.php
+├── 📄 schedule.json
+├── 📄 search.php
+├── 📄 sign_up.php
+├── 📄 tour.php
+├── 📄 tour_details.php
+├── 📄 users.json
+├── 📄 view_client.php
+└── 📄 view_reservation.php
+```
+
 
 
 ## Auteurs    
