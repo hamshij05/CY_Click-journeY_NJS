@@ -58,7 +58,7 @@ PHP inclus dans l'environnement serveur
    + Ouvrez le peanneau de contrôle de WAMP et démarrez Apache.  
 2. Configuration de la base de données  
    + Ouvre
-3. COnfiguration du projet
+3. Configuration du projet
    + Placez le dossier du projet dans le répertoire `www` de WAMP : 
 
 1. Télécharger le fichier ZIP du projet depuis GitHub. 
