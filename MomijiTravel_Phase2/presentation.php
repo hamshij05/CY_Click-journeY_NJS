@@ -62,6 +62,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
                 <li>Découverte de la gastronomie locale</li>
                 <li>Expérience des onsen (sources thermales)</li>
                 <li>Observation des érables dans des jardins séculaires</li>
+                <li>Annulation possible</li>
             </ul>
         </section>
 

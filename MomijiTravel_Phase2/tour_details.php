@@ -25,7 +25,7 @@ foreach ($usersData['users'] as $user) {
         foreach ($user['reservation'] as $reservation) {
             if ($reservation['id_tour'] === $reservationId) {
                 $selectedReservation = $reservation;
-                break 2; // On quitte les deux boucles
+                break 2; 
             }
         }
     }

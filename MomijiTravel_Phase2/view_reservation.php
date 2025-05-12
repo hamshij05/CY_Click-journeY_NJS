@@ -208,7 +208,7 @@ $tourId .= '-' . date('Ymd', strtotime($formattedDate));
                 <?php endif; ?>
                 <br/>
                 <form method="post" action="result_tour.php" style="display: inline;">
-    <!-- Conversion des noms en codes -->
+    <!-- change name -->
     <input type="hidden" name="duration" value="<?php echo $reservation['duration']; ?>">
     <input type="hidden" name="first-theme" value="<?php echo $firstTheme; ?>">
     <input type="hidden" name="first-region" value="<?php echo $firstRegion; ?>">
@@ -219,7 +219,7 @@ $tourId .= '-' . date('Ymd', strtotime($formattedDate));
     <?php endif; ?>
     
     <?php 
-    // Convertir la date du format français (dd/mm/yyyy) au format anglais (yyyy-mm-dd)
+    // convert date to an english style
     $dateParts = explode('/', $reservation['date']);
     if (count($dateParts) === 3) {
         $dateFormatted = $dateParts[2].'-'.$dateParts[1].'-'.$dateParts[0];
@@ -232,21 +232,21 @@ $tourId .= '-' . date('Ymd', strtotime($formattedDate));
     <input type="hidden" name="travelers" value="<?php echo $reservation['participants']; ?>">
     
     <?php
-    // Déterminer les codes de transport et hôtel
+    // code for transport and hotel
     $transportCode = 'standard';
-    if ($reservation['transport'] == 'Confort') $transportCode = 'comfort';
-    if ($reservation['transport'] == 'Premium') $transportCode = 'premium';
+    if ($reservation['transport'] == 'Transport VIP') $transportCode = 'vip';
+    if ($reservation['transport'] == 'Transport Standard') $transportCode = 'standard';
     
     $hotelCode = 'standard';
-    if ($reservation['hotel'] == 'Confort') $hotelCode = 'comfort';
-    if ($reservation['hotel'] == 'Premium') $hotelCode = 'premium';
+    if ($reservation['hotel'] == 'Hotel VIP') $hotelCode = 'vip';
+    if ($reservation['hotel'] == 'Hotel Standard') $hotelCode = 'standard';
     ?>
     
     <input type="hidden" name="transport" value="<?php echo $transportCode; ?>">
     <input type="hidden" name="hotel" value="<?php echo $hotelCode; ?>">
     
     <?php
-    // Calcul du prix par personne
+    // calculate price
     $pricePerPerson = $reservation['total_price'] / $reservation['participants'];
     ?>
     

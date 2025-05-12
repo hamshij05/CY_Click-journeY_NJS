@@ -42,16 +42,16 @@ $formattedPrice = number_format($totalGroupPrice, 2, '.', '');
 // Generate a unique transaction ID
 $transactionId = 'MT' . time() . substr(md5($tourId), 0, 10);
 
-// Set the vendor code - Use one of the accepted codes from the PDF
-$vendorCode = "MIM_D"; // Change this to your assigned vendor code
+// Set the vendor code (our group name)
+$vendorCode = "MIM_D"; 
 
-// Get the API key
+
 $apiKey = getAPIKey($vendorCode);
 
 // Set the return URL
 $returnUrl = "http://" . $_SERVER['HTTP_HOST'] . "/MomijiTravel_Phase2/payment_return.php?user_id=" . $_SESSION['user_id'];
 
-// Generate control value according to the specification - modified to remove trailing #
+// Generate control value 
 $controlValue = md5($apiKey . "#" . $transactionId . "#" . $formattedPrice . "#" . $vendorCode . "#" . $returnUrl . "#");
 
 

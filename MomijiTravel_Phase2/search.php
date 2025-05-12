@@ -14,10 +14,10 @@ if ($error === 'past_date') {
     $errorMessage = 'La date de départ doit être dans le futur.';
 }
 
-// Gestion de l'affichage des champs en fonction de la durée
+// special print for duration
 $duration = isset($_POST['duration']) ? $_POST['duration'] : '';
 
-// Définition des styles d'affichage pour chaque groupe de champs
+
 $firstThemeDisplay = "none";
 $firstRegionDisplay = "none";
 $secondThemeDisplay = "none";
@@ -25,13 +25,13 @@ $secondRegionDisplay = "none";
 $transportDisplay = "none";
 $hotelDisplay = "none";
 
-// Définition des attributs 'required'
+
 $firstThemeRequired = "";
 $firstRegionRequired = "";
 $secondThemeRequired = "";
 $secondRegionRequired = "";
 
-// Si une durée est sélectionnée, mettre à jour l'affichage
+// update if duration is selected
 if (!empty($duration)) {
     if ($duration === "5") {
         $firstThemeDisplay = "block";
@@ -108,7 +108,7 @@ if (!empty($duration)) {
             </form>
 
             <form class="search-form" action="result_tour.php" method="POST">
-                <!-- On garde la durée pour la soumettre dans le formulaire final -->
+                <!-- save duration  -->
                 <input type="hidden" name="duration" value="<?php echo htmlspecialchars($duration); ?>">
 
                 <!-- First period fields (shown for both 5 and 10 days) -->

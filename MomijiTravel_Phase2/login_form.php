@@ -11,25 +11,25 @@ if (isset($_SESSION['user_id'])) {
 
 
 
-// Traitement du formulaire de connexion
+// connexion form
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login = $_POST['login'] ?? '';
     $password = $_POST['password'] ?? '';
     
     $error = '';
     
-    // Vérifier si les champs sont remplis
+    // check if full 
     if (empty($login) || empty($password)) {
         $error = 'Veuillez remplir tous les champs';
     } else {
         $result = verifyCredentials($login, $password);
         
         if (isset($result['success']) && $result['success']) {
-            // Connexion réussie
+            // connexion succeed
             $_SESSION['user_id'] = $result['user']['id'];
             $_SESSION['user_login'] = $result['user']['login'];
             
-            // Redirection vers la page de index
+            // redirection to index
             header('Location: index.php');
             exit;
         } else {

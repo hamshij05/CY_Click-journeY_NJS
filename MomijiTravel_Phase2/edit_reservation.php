@@ -13,7 +13,7 @@ if (isset($_GET['user_id'])) {
     $userId = $_SESSION['user_id'];
 } else {
     // Redirect to login page if no user ID is available
-    header('Location: login.php');
+    header('Location: login_form.php');
     exit;
 }
 
@@ -193,11 +193,11 @@ $formattedDate = $reservation['date']; // Already in display format
             </div>
             
             <div class="booking-buttons">
-                <button type="button" class="btn btn-search" onclick="window.location.href='profil.php'">Retour au profil</button>
+                <button type="button" class="btn btn-search" onclick="window.location.href='profil.php'">Retour au profil</button> <!-- onclick sets a function to run when the element is clicked; here it redirects the user to another page -->
                 <button type="button" class="btn btn-search" onclick="window.location.href='modify_reservation.php?index=<?php echo $reservationIndex; ?>'">Modifier cette réservation</button>
                 
                 <form method="post" action="" style="display: inline;" onsubmit="return confirmDelete();">
-                    <input type="hidden" name="delete_reservation" value="1">
+                    <input type="hidden" name="delete_reservation" value="1"> <!-- type="hidden" creates a hidden input that stores data without showing it to the user -->
                     <input type="hidden" name="reservation_index" value="<?php echo $reservationIndex; ?>">
                     <button type="submit" class="btn btn-delete">Supprimer cette réservation</button>
                 </form>

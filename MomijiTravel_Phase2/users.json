@@ -20,7 +20,7 @@
                     "region2": "",
                     "theme2": "",
                     "total_price": "2100",
-                    "status": "pay\u00e9",
+                    "status": "payé",
                     "transaction_id": "MT17456072590f35625fe6"
                 },
                 {
@@ -35,8 +35,22 @@
                     "region2": "Kanto (Tokyo et alentours)",
                     "theme2": "Culture & Temples",
                     "total_price": "4000",
-                    "status": "pay\u00e9",
+                    "status": "payé",
                     "transaction_id": "MT1745607226f9694ffa3b"
+                },
+                {
+                    "id_tour": "6821f89909f2d",
+                    "date": "17\/05\/2025",
+                    "duration": "5",
+                    "participants": "1",
+                    "transport": "Transport Standard",
+                    "hotel": "Hotel Standard",
+                    "region1": "Kansai (Kyoto, Osaka, Nara, Kobe)",
+                    "theme1": "Culture & Temples",
+                    "region2": "",
+                    "theme2": "",
+                    "total_price": "1850",
+                    "status": "réservé"
                 }
             ]
         },
@@ -68,7 +82,130 @@
                     "region2": "Kanto (Tokyo et alentours)",
                     "theme2": "Gastronomique & Traditionnel",
                     "total_price": "3800",
-                    "status": "r\u00e9serv\u00e9"
+                    "status": "réservé"
+                }
+            ]
+        },
+        {
+            "id": "680e8878790e1",
+            "first_name": "Thuy Tran",
+            "surname": "NGUYEN",
+            "email": "thuy-tran.nguyen@grenoble-em.com",
+            "login": "ii",
+            "password": "$2y$10$Aeu8Cdr5Bd4BUH3Q4dEsxO4zmyVRHQSDQBFNREPLQH9DTNGjZ16gu",
+            "reservation": [
+                {
+                    "id_tour": "MT-TOC-20250508",
+                    "date": "08\/05\/2025",
+                    "duration": "5",
+                    "participants": "1",
+                    "transport": "Transport Standard",
+                    "hotel": "Hotel Standard",
+                    "region1": "Tohoku (Nord du Japon)",
+                    "theme1": "Culture & Temples",
+                    "region2": "",
+                    "theme2": "",
+                    "total_price": "1750.00",
+                    "status": "payé",
+                    "transaction_id": "MT1745783150439e3cef00"
+                },
+                {
+                    "id_tour": "MT-TOG-20250502",
+                    "date": "02\/05\/2025",
+                    "duration": "5",
+                    "participants": "1",
+                    "transport": "Transport VIP",
+                    "hotel": "Hotel Standard",
+                    "region1": "Tohoku (Nord du Japon)",
+                    "theme1": "Gastronomique & Traditionnel",
+                    "region2": "",
+                    "theme2": "",
+                    "total_price": "1850.00",
+                    "status": "payé",
+                    "transaction_id": "MT1745783495f176025583"
+                }
+            ]
+        },
+        {
+            "id": "68186ff5000a9",
+            "first_name": "Thuy Tran",
+            "surname": "NGUYEN",
+            "email": "ngnrayan@gmail.com",
+            "login": "tts",
+            "password": "$2y$10$I3ZE11u0WAH\/Vo4jgrka4efKeIbjCWKiJY2y3p.L8FACKED7W67yS"
+        },
+        {
+            "id": "6821b0fc162fe",
+            "first_name": "Elsa",
+            "surname": "Sanchez",
+            "email": "elsou.sanchez@gmail.com",
+            "login": "elsw3",
+            "password": "$2y$10$X8KSFGJ2nM4Cx.no2rTPl.JMhwbk56TKrhfnCnVYQC.x91o8ej2r6",
+            "reservation": [
+                {
+                    "id_tour": "6821b25461e13",
+                    "date": "07\/06\/2025",
+                    "duration": "5",
+                    "participants": "4",
+                    "transport": "Transport VIP",
+                    "hotel": "Hotel Standard",
+                    "region1": "Kansai (Kyoto, Osaka, Nara, Kobe)",
+                    "theme1": "Culture & Temples",
+                    "region2": "",
+                    "theme2": "",
+                    "total_price": "7800",
+                    "status": "payé",
+                    "transaction_id": "MT174703881628c9fd19a7"
+                }
+            ]
+        },
+        {
+            "id": "6821b378785d3",
+            "first_name": "Thuy Tran",
+            "surname": "NGUYEN",
+            "email": "fennestyno@gmail.com",
+            "login": "PI",
+            "password": "$2y$10$YGCTTvIfQxNga.DeiftXQeiifqeWdSdq8UVchOAk7R6bezH26m1CK",
+            "reservation": [
+                {
+                    "id_tour": "6821b3c72d633",
+                    "date": "05\/06\/2025",
+                    "duration": "10",
+                    "participants": "4",
+                    "transport": "Transport Standard",
+                    "hotel": "Hotel VIP",
+                    "region1": "Kanto (Tokyo et alentours)",
+                    "theme1": "Culture & Temples",
+                    "region2": "Kansai (Kyoto, Osaka, Nara, Kobe)",
+                    "theme2": "Détente & Bien-être",
+                    "total_price": "15600",
+                    "status": "payé",
+                    "transaction_id": "MT174703919151b7d13eba"
+                }
+            ]
+        },
+        {
+            "id": "6821b539e243f",
+            "first_name": "Elsa",
+            "surname": "El Dana",
+            "email": "elsa.eldana@gmail.com",
+            "login": "elsaaaaa",
+            "password": "$2y$10$W4kOLdG6zXNjVrWtXPynYeXrMaQsFXAYYFyNZGz5CbeFYIw7sIH4m",
+            "reservation": [
+                {
+                    "id_tour": "6821b5900d1d6",
+                    "date": "18\/06\/2025",
+                    "duration": "10",
+                    "participants": "2",
+                    "transport": "Transport VIP",
+                    "hotel": "Hotel VIP",
+                    "region1": "Tohoku (Nord du Japon)",
+                    "theme1": "Détente & Bien-être",
+                    "region2": "Kansai (Kyoto, Osaka, Nara, Kobe)",
+                    "theme2": "Gastronomique & Traditionnel",
+                    "total_price": "8200",
+                    "status": "payé",
+                    "transaction_id": "MT17470397165470f7a4fc"
                 }
             ]
         }

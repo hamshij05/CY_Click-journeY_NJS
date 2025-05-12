@@ -108,11 +108,11 @@ $profilePicture = getProfilePicture($userId);
         </section>
 
         
-        <div class="wrap"> <!-- container that centers its content both horizontally and vertically on the screen. -->
-        <div class="login_box"> <!--Login box styling with blur effect, border, and shadow-->
-        <div class="login-header"> <!--title of the sign up form-->
-          <span>Profil</span>
-        </div>
+        <div class="wrap"> 
+        <div class="login_box"> 
+            <div class="login-header"> 
+                <span>Profil</span>
+            </div>
  
                 <form method="post" action="profil.php" enctype="multipart/form-data">  <!-- Form for profile editing-->
                     <div class="profil-section">
@@ -161,17 +161,17 @@ $profilePicture = getProfilePicture($userId);
                     <section class="journey-highlights">
                         <h3>Mes Réservations</h3>
                         <?php 
-                        // Créer un tableau temporaire pour le tri
+                        // temporary table
                         $sortedReservations = $user['reservation'];
                         
-                        // Fonction de comparaison pour trier par date
+                        // function to sort date
                         usort($sortedReservations, function($a, $b) {
                             return strtotime($a['date']) - strtotime($b['date']);
                         });
                         
-                        // Afficher les réservations triées
+                        // print reservation sorted
                         foreach ($sortedReservations as $index => $reservation): 
-                            // Récupérer l'index original pour maintenir les liens corrects
+                            // get og index to have the correct link
                             $originalIndex = array_search($reservation, $user['reservation']);
                         ?>
                             <a href="view_reservation.php?index=<?php echo $originalIndex; ?>" class="reservation-link">

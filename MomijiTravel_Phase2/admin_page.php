@@ -126,7 +126,8 @@ foreach ($users as $user) {
                 <?php else: ?>
                     <?php foreach ($filteredUsers as $user): ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($user['surname']); ?></td>
+                            <td><?php echo htmlspecialchars($user['surname']); ?></td> <!-- htmlspecialchars() is used to prevent code injection by converting special characters into safe HTML entities. -->
+
                             <td><?php echo htmlspecialchars($user['first_name']); ?></td>
                             <td><?php echo htmlspecialchars($user['email']); ?></td>
                             <td>
@@ -134,7 +135,7 @@ foreach ($users as $user) {
                                     <?php echo $user['status']; ?>
                                 </span>
                             </td>
-                            <td>
+                            <td> <!--list reservation of the client-->
                                 <?php if (isset($user['reservation']) && !empty($user['reservation'])): ?>
                                     <ul class="reservation-list">
                                         <?php foreach ($user['reservation'] as $index => $reservation): ?>

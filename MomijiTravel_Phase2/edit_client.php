@@ -117,18 +117,19 @@ $profilePicture = getProfilePicture($userId);
 
     <main>
         <div class="back-link">
-            <a href="admin_page.php">&larr; Retour à la liste des clients</a>
+            <a href="admin_page.php">&larr; Retour à la liste des clients</a> <!-- &larr; is an HTML entity that displays a left arrow symbol (←)  == go back to the previous page-->
+
         </div>
         <br/>
         
-        <?php if (!empty($message)): ?>
+        <?php if (!empty($message)): ?> <!--if error in update, send a message to inform -->
             <div class="message <?php echo $messageClass; ?>">
                 <?php echo $message; ?>
             </div>
         <?php endif; ?>
         
         <section class="feature-card">
-            <h2>Modifier le profil de <?php echo htmlspecialchars($user['first_name']); ?> <?php echo htmlspecialchars($user['surname']); ?></h2>
+            <h2>Modifier le profil de <?php echo htmlspecialchars($user['first_name']); ?> <?php echo htmlspecialchars($user['surname']); ?></h2> <!-- to prevent any injection, def in admin page php-->
             
             <div class="profile-picture-container">
                 <img src="<?php echo htmlspecialchars($profilePicture); ?>" alt="Photo de profil">
@@ -140,8 +141,8 @@ $profilePicture = getProfilePicture($userId);
             <form class="search-form" method="post" action="edit_client.php?id=<?php echo $userId; ?>" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="surname">Nom:</label>
-                    <input type="text" id="surname" name="surname" 
-                           value="<?php echo htmlspecialchars($user['surname']); ?>"
+                    <input type="text" id="surname" name="surname"  
+                           value="<?php echo htmlspecialchars($user['surname']); ?>"   
                            required>
                 </div>
                 

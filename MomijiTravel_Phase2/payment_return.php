@@ -42,7 +42,8 @@ if (isset($_GET['transaction']) && isset($_GET['montant']) && isset($_GET['vende
                 // Get payment details
                 $paymentDetails = $_SESSION['payment_details'];
 
-                // Update the user's data in the JSON file
+
+
 $filePath = 'users.json';
 $usersData = json_decode(file_get_contents($filePath), true);
 
@@ -183,7 +184,7 @@ foreach ($usersData['users'] as &$user) {
                 
                 <p>Votre réservation a été enregistrée avec succès. Vous pouvez consulter les détails de votre voyage dans votre espace personnel.</p>
             <?php else: ?>
-                <div class="icon error-icon">✗</div>
+                <div class="icon error-icon">✗</div> <!--error messqge-->
                 <div class="error-message">
                     <?php echo $message; ?>
                 </div>
