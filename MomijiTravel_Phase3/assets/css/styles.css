@@ -1,0 +1,752 @@
+/* Base styles and variables */
+:root {
+    --momiji-red: #A42020;
+    --maple-orange: #D4611D;
+    --autumn-gold: #E6A44E;
+    --cream: #FAF3E0;
+    --zen-gray: #2C2C2C;
+    --paper-white: #F8F4E9;
+    --dark-black: #121212
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("../images/momiji_bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--cream);
+    line-height: 1.6;
+}
+
+
+
+/* Header Styles */
+header {
+    background-color: var(--momiji-red);
+    padding: 1.5rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: var(--cream);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 0.5rem 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* Navigation */
+nav {
+    width: 100vw;  /* Utilise toute la largeur de la fenêtre */
+    margin: 0.5rem 0;  /* Supprime la marge auto horizontale */
+    padding: 1rem 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    text-align: center;
+    box-sizing: border-box; /* Inclut padding dans la largeur */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav a {
+    color: var(--cream);
+    margin: 0 1.5rem;
+    text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+
+
+/* Hero Section : important partie */
+.page-hero {
+    text-align: center;
+    padding: 8rem 2rem;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+    ), url('../images/bg-autumn.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--cream);
+}
+
+.page-hero h2 {
+    font-size: 3.5rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.page-hero p, label {
+    font-size: 1.4rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Button Styles */
+.btn {
+    background-color: var(--maple-orange);
+    color: var(--cream);
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--autumn-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--cream);
+    margin-left: 1rem;
+}
+
+.btn-outline:hover {
+    background-color: var(--cream);
+    color: var(--momiji-red);
+}
+
+
+
+/* Form Styles */
+.search-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.9); 
+    background-blend-mode: darken;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.form-group {
+
+    margin-bottom: 1.5rem;
+}
+
+
+
+input, select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--maple-orange);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--cream);
+    transition: border-color 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.9); 
+    background-blend-mode: darken;
+}
+
+input::placeholder {
+    color: var(--cream);
+    opacity: 0.7;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1rem;
+}
+
+input:focus, select:focus {
+    border-color: var(--maple-orange);
+    outline: none;
+}
+
+
+
+/* Feature Grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    color:  var(--cream);
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+.feature-card {
+    padding: 2rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.8); 
+    background-blend-mode: darken;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--momiji-red);
+    margin-bottom: 1rem;
+}
+
+.feature-card h4 {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--momiji-red);
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+/* Tour Grid */
+.tour-grid {
+    display: grid;
+    font-family: 'Noto Sans JP', sans-serif;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.tour-card {
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-position: center;     					  
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.8); 
+    background-blend-mode: darken;
+}
+
+.tour-card:hover {
+    transform: translateY(-5px);
+}
+
+.tour-card h4 {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--momiji-red);
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-family: 'Noto Sans JP', sans-serif;
+    display: block;
+    color: var(--maple-orange);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+
+
+
+/* Journey Highlights */
+.journey-highlights {
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 4rem 2rem;
+    margin-top: 4rem;
+    background-position: center;     					  
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.9); 
+    background-blend-mode: darken;
+
+}
+
+.journey-highlights p {
+    font-family: 'Noto Sans JP', sans-serif;
+
+}
+
+
+.highlights-list {
+    max-width: 800px;
+    margin: 2rem auto;
+    list-style: none;
+}
+
+.highlights-list li {
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1.25rem;
+    padding-left: 2rem;
+}
+
+.highlights-list li::before {
+    content: "🍁";
+
+    left: 0;
+    top: 1rem;
+}
+
+/* Section Headers */
+section h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem 0;
+    color: var(--paper-white);
+}
+
+/* Footer */
+footer {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--zen-gray);
+    color: var(--cream);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* Main Content Wrapper */
+main {
+    min-height: 80vh;
+}
+
+/* CTA Buttons Container */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card, .tour-card, .about-text {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    nav a {
+        display: block;
+        margin: 0.5rem 1rem;
+    }
+    
+    .page-hero {
+        padding: 4rem 1rem;
+    }
+    
+    .page-hero h2 {
+        font-size: 2.5rem;
+    }
+    
+    .page-hero p {
+        font-size: 1.2rem;
+    }
+    
+    .feature-grid, .tour-grid, .about-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-outline {
+        margin-left: 0;
+    }
+
+    .search-form {
+        margin: 1rem;
+        padding: 1rem;
+    }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+
+
+
+
+/*Login page*/
+
+.background {
+  background-image: url("../images/photo_login.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--paper-white);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.login_box {
+  position: relative;
+  width: 450px;
+  padding: 7.5em 1.5em 4em 1.5em;
+  backdrop-filter: blur(25px);
+  border: 2px solid var(--zen-gray);
+  border-radius: 15px;
+  padding: 7.5em 2.5em 4em 2.5em;
+  color: var(--cream);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+.login-header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--zen-gray);
+  width: 140px;
+  height: 70px;
+  border-radius: 0 0 20px 20px;
+}
+
+.login-header span {
+  font-size: 30px;
+  color: var(--cream);
+}
+
+.login-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 30px;
+  height: 30px;
+  border-top-right-radius: 50%;
+  background: transparent;
+  box-shadow: 15px 0 0 0 var(--zen-gray);
+}
+
+.login-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -30px;
+  width: 30px;
+  height: 30px;
+  border-top-left-radius: 50%;
+  background: transparent;
+  box-shadow: -15px 0 0 0 var(--zen-gray); /* Removed space before "connexion" */
+}
+
+
+.input_box {
+    position: relative; /* nécessaire pour que l’absolu de l’œil fonctionne */
+    margin: 20px 0;
+  }
+  
+  .input_box .toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: #FAF3E0;
+    z-index: 2;
+    line-height: 1;
+  }
+  
+
+.input-field {
+  width: 100%;
+  height: 55px;
+  font-size: 16px;
+  background: transparent;
+  color: var(--paper-white);
+  padding-inline: 20px 50px;
+  border: 2px solid var(--cream);
+  border-radius: 30px;
+  outline: none;
+}
+
+input:disabled {
+    background-color: #e0e0e0 !important;
+    color: #555 !important;
+    cursor: not-allowed;
+  }
+
+#user {
+  margin-bottom: 10px;
+}
+
+.label {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  transition: 0.2s;
+}
+
+
+.input-field:focus ~ .label,
+.input-field:valid .label {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 14px;
+  background-color: var(--paper-white);
+  border-radius: 30px;
+  color: var(--dark-black);
+  padding: 0 10px;
+} 
+
+.icon {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  font-size: 20px;
+}
+
+.remember-forgot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 15px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espace entre la case et le texte */
+  align-self: flex-start; 
+white-space: nowrap; 
+}
+
+.input-submit {
+  width: 100%;
+  height: 50px;
+  background: var(--zen-gray);
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-submit:hover {
+  background: var(--dark-black);
+  outline: 2px solid var(--maple-orange); 
+
+}
+
+
+.register {
+  text-align: center;
+
+}
+
+.register a {
+  font-weight: 500;
+} 
+
+/* Accessibility */
+:focus {
+    outline: 3px solid var(--autumn-gold);
+    outline-offset: 2px;
+    border-radius:4px;
+}
+
+
+/*administrator */
+
+        /* badges example: name like this only for phase 1 */
+        .style-examples {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+        }
+
+        .style-examples h2 {
+            color: var(--cream);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+	    font-family: 'Noto Sans JP', sans-serif;
+
+	    
+        }
+
+        .example-section {
+            margin-bottom: 1rem;
+        }
+
+        .example-section h3 {
+            color: var(--cream);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Noto Sans JP', sans-serif;
+
+        }
+
+
+	/*Design of the badge that show the statut of each client*/
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .status-standard {
+            background-color: var(--zen-gray);
+            color: var(--cream);
+            border: 1px solid var(--cream);
+        }
+
+        .status-vip {
+            background-color: var(--autumn-gold);
+            color: var(--zen-gray);
+            font-weight: 600;
+        }
+
+
+
+        .btn-edit {
+            background-color: var(--maple-orange);
+            color: var(--cream);
+        }
+
+        .btn-edit:hover {
+            background-color: var(--autumn-gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-delete {
+            background-color: var(--momiji-red);
+            color: var(--cream);
+        }
+
+        .btn-delete:hover {
+            background-color: var(--momiji-red);
+            transform: translateY(-2px);
+        }
+
+
+
+	/*Make it in advance*/
+        .client-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .client-table th,
+        .client-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .client-table th {
+            background-color: var(--momiji-red);
+            color: var(--cream);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--cream);
+            font-style: italic;
+        }
+
+/* Profile Picture Styles */
+.profile-picture-container {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid var(--autumn-gold);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.profile-picture-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+

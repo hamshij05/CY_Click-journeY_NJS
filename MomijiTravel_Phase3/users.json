@@ -1,0 +1,62 @@
+{
+    "users": [
+        {
+            "id": "6821fe9d9c8bc",
+            "first_name": "admin",
+            "surname": "admin",
+            "email": "admin@gmail.com",
+            "login": "admin",
+            "password": "$2y$10$cxPTWvFFdjWU2Blc6b6Yv.ryqZWsG13yoieCgh93HKix8M9F7uiz6",
+            "role": "admin",
+            "reservation": [
+                {
+                    "id_tour": "MT-KAC-20250523",
+                    "date": "23\/05\/2025",
+                    "duration": "5",
+                    "participants": "1",
+                    "transport": "Transport Standard",
+                    "hotel": "Hotel VIP",
+                    "region1": "Kanto (Tokyo et alentours)",
+                    "theme1": "Culture & Temples",
+                    "region2": "",
+                    "theme2": "",
+                    "total_price": "1900.00",
+                    "status": "pay\u00e9",
+                    "transaction_id": "MT1747062615d6919ee429"
+                },
+                {
+                    "id_tour": "682897117a276",
+                    "date": "28\/05\/2025",
+                    "duration": "5",
+                    "participants": "3",
+                    "transport": "Transport VIP",
+                    "hotel": "Hotel Standard",
+                    "region1": "Kanto (Tokyo et alentours)",
+                    "theme1": "Gastronomique & Traditionnel",
+                    "region2": "",
+                    "theme2": "",
+                    "total_price": "5550",
+                    "status": "r\u00e9serv\u00e9"
+                }
+            ]
+        },
+        {
+            "id": "682205c56e6b4",
+            "first_name": "alo",
+            "surname": "alo",
+            "email": "alo@gmail.com",
+            "login": "alo",
+            "password": "$2y$10$fAuyVcQLMwf0yqmaJsesn.z59ZKySX.49dFvS7GGnFiPkDI\/YIDo6",
+            "role": "admin"
+        },
+        {
+            "id": "6828b2756b473",
+            "first_name": "Thuy Tran",
+            "surname": "NGUYEN",
+            "email": "thuy-tran.nguyen@grenoble-em.com",
+            "login": "tt",
+            "password": "$2y$10$Vq76UNUcIMU6vSP8Nv7aq.dVwdH55R0TxuXM8ymNSgVeaBXuZd7xC",
+            "role": "user"
+        }
+    ]
+}
