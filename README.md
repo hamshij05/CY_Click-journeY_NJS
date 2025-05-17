@@ -16,7 +16,7 @@
 7. [Auteurs](#auteurs)
 
 ## Description du projet     
-Le projet Click-journeY est un site web développé pour l'agence Momiji Travel, spécialisée dans les voyages au Japon en saison d’automne. Il propose des séjours préconfigurés de 10 jours, permettant aux voyageurs de choisir 2 régions sur 3 et d'adapter certains aspects. Les clients peuvent choisir parmi plusieurs circuits prédéfinis, axés sur 3 grandes régions et thèmes différents : culture & temples, gastronomie & traditions et détente & bien-être.
+Le projet Click-journeY est un site web développé pour l'agence **Momiji Travel**, spécialisée dans les voyages au Japon en saison d’automne. Il propose des séjours préconfigurés de 10 jours, permettant aux voyageurs de choisir 2 régions sur 3 et d'adapter certains aspects. Les clients peuvent choisir parmi plusieurs circuits prédéfinis, axés sur 3 grandes régions et thèmes différents : culture & temples, gastronomie & traditions et détente & bien-être.
 
 ## Structure  
 Le projet est divisé en plusieurs phases : 
@@ -75,7 +75,7 @@ Extraire les
 **`tour.html`** : page listant les circuits touristiques diponibles avec descriptions et liens vers les détails des voyages  
 **`presentation.html`** : présentation de l'agence, ses valeurs et recherche de circuits par thème   
 **`users.json`** : données des utilisateurs  
-schedule.json : informations sur les circuits et horaires
+**`schedule.json`** : informations sur les circuits et horaires
 **`assets`** contient les fichiers CSS et les images utilisées sur nos pages  
 
 
@@ -83,6 +83,60 @@ schedule.json : informations sur les circuits et horaires
 ## Arborescence du projet
 
 ```
+📁 MomijiTravel_Phase3
+├── 📁 all_tour_details
+│   ├── 📄 nav.php
+│   ├── 📄 tour_kansai_tohoku_culture.php
+│   ├── 📄 tour_kansai_tohoku_detente.php
+│   ├── 📄 tour_kansai_tohoku_food.php
+│   ├── 📄 tour_kanto_kansai_culture.php
+│   ├── 📄 tour_kanto_kansai_detente.php
+│   ├── 📄 tour_kanto_kansai_food.php
+│   ├── 📄 tour_kanto_tohoku_culture.php
+│   ├── 📄 tour_kanto_tohoku_detente.php
+│   └── 📄 tour_kanto_tohoku_food.php
+│
+├── 📁 assets
+│   ├── 📁 css
+│   │   └── 📄 styles.css
+│   │   └── 📄 darkstyles.css
+│   └── 📁 images
+│       └── 📄 (images)
+│
+├── 📁 functions
+│   └── 📄 functions.php
+│
+├── 📁 js
+│   └── 📄 theme.js
+│
+├── 📄 admin_page.php
+├── 📄 edit_client.php
+├── 📄 edit_reservation.php
+├── 📄 footer.php
+├── 📄 getapikey.php
+├── 📄 header.php
+├── 📄 index.php
+├── 📄 login_form.php
+├── 📄 logout.php
+├── 📄 modify_reservation.php
+├── 📄 payment.php
+├── 📄 payment_return.php
+├── 📄 presentation.php
+├── 📄 profil.php
+├── 📄 result_tour.php
+├── 📄 schedule.json
+├── 📄 search.php
+├── 📄 sign_up.php
+├── 📄 tour.php
+├── 📄 tour_details.php
+├── 📄 users.json
+├── 📄 view_client.php
+├── 📄 view_reservation.php
+│
+├── 📁 js
+│   └── 📄 theme.js
+│
+│
 📁 MomijiTravel_Phase2
 ├── 📁 all_tour_details
 │   ├── 📄 nav.php
@@ -130,7 +184,45 @@ schedule.json : informations sur les circuits et horaires
 ├── 📄 tour_details.php
 ├── 📄 users.json
 ├── 📄 view_client.php
-└── 📄 view_reservation.php
+├── 📄 view_reservation.php
+│
+│
+📁 MomijiTravel_Phase1
+├── 📁 all_tour_details
+│   ├── 📄 tour_kansai_tohoku_culture.html
+│   ├── 📄 tour_kansai_tohoku_detente.html
+│   ├── 📄 tour_kansai_tohoku_food.html
+│   ├── 📄 tour_kanto_kansai_culture.html
+│   ├── 📄 tour_kanto_kansai_detente.html
+│   ├── 📄 tour_kanto_kansai_food.html
+│   ├── 📄 tour_kanto_tohoku_culture.html
+│   ├── 📄 tour_kanto_tohoku_detente.html
+│   └── 📄 tour_kanto_tohoku_food.html
+│
+├── 📁 assets
+│   ├── 📁 css
+│   │   └── 📄 styles.css
+│   └── 📁 images
+│       └── 📄 (images)
+│
+├── 📄 admin_page.html
+├── 📄 admin_page.php
+├── 📄 footer.php
+├── 📄 index.html
+├── 📄 index.php
+├── 📄 login_form.html
+├── 📄 login_form.php
+├── 📄 logout.php
+├── 📄 nav.php
+├── 📄 presentation.html
+├── 📄 presentation.php
+├── 📄 profil.html
+├── 📄 profil.php
+├── 📄 search.html
+├── 📄 search.php
+├── 📄 signup.html
+├── 📄 sign_up.php
+├── 📄 tour.html
 ```
 
 
