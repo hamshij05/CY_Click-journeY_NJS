@@ -12,7 +12,8 @@
 3. [Langages](#langages)
 4. [Installation](#installation)
 5. [Fonctionnalités du site](#fonctionnalités-du-site)
-6. [Auteurs](#auteurs)
+6. [Arborescence du projet](#arborescence-du-projet)
+7. [Auteurs](#auteurs)
 
 ## Description du projet     
 Le projet Click-journeY est un site web développé pour l'agence Momiji Travel, spécialisée dans les voyages au Japon en saison d’automne. Il propose des séjours préconfigurés de 10 jours, permettant aux voyageurs de choisir 2 régions sur 3 et d'adapter certains aspects. Les clients peuvent choisir parmi plusieurs circuits prédéfinis, axés sur 3 grandes régions et thèmes différents : culture & temples, gastronomie & traditions et détente & bien-être.
