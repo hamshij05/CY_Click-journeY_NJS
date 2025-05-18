@@ -23,7 +23,6 @@ Le projet est divisé en plusieurs phases :
 1. **`Phase 1`** : Développement de l'interface utilisateur en HTML et CSS
 2. **`Phase 2`** : Mise en place du backend (PHP, base de données)  
 3. **`Phase 3`** : Ajout des fonctionnalités interactives avec JavaScript
-4. **`Phase 4`** : Requêtes asynchrones pour optimiser l’expérience utilisateur  
 
 ## Langages    
 
@@ -87,8 +86,8 @@ Extraire les
 📄Docs_de_conception-Phase3.pdf
 📄README.md
 📄rapport_finale.pdf
-
-
+│
+│
 📁 MomijiTravel_Phase3
 ├── 📁 all_tour_details
 │   ├── 📄 nav.php
