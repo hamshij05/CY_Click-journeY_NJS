@@ -83,6 +83,12 @@ Extraire les
 ## Arborescence du projet
 
 ```
+📄Docs_de_conception-Phase1.pdf
+📄Docs_de_conception-Phase3.pdf
+📄README.md
+📄rapport_finale.pdf
+
+
 📁 MomijiTravel_Phase3
 ├── 📁 all_tour_details
 │   ├── 📄 nav.php
@@ -102,6 +108,7 @@ Extraire les
 │   │   └── 📄 darkstyles.css
 │   └── 📁 images
 │       └── 📄 (images)
+|       └── 📁 profil
 │
 ├── 📁 functions
 │   └── 📄 functions.php
@@ -155,6 +162,7 @@ Extraire les
 │   │   └── 📄 styles.css
 │   └── 📁 images
 │       └── 📄 (images)
+|       └── 📁 profil
 │
 ├── 📁 functions
 │   └── 📄 functions.php
