@@ -22,7 +22,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link id="theme-link" rel="stylesheet" href="assets/css/styles.css">
-  <script src="js/theme_form.js" defer></script>
+     <script src="js/theme.js" defer></script>
 </head>
 
 
