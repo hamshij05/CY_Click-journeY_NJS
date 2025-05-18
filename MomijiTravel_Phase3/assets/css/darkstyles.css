@@ -1,12 +1,12 @@
 /* Base styles and variables */
 :root {
-    --momiji-red: #5A0F0F;         /* Rouge très foncé */
-    --maple-orange: #A24C00;       /* Orange brûlé foncé */
-    --autumn-gold: #8C6B1F;        /* Doré désaturé */
-    --cream: #DADADA;              /* Gris clair lisible */
-    --zen-gray: #121212;           /* Presque noir */
-    --paper-white: #B0B0B0;        /* Gris clair pour titres */
-    --dark-black: #000000;         /* Noir total */
+    --momiji-red: #5A0F0F;        
+    --maple-orange: #A24C00;      
+    --autumn-gold: #8C6B1F;        
+    --cream: #DADADA;              
+    --zen-gray: #121212;          
+    --paper-white: #B0B0B0;       
+    --dark-black: #000000;         
 }
 
 /* Global Styles */
