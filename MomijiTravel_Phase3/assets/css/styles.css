@@ -51,13 +51,13 @@ header h1 {
 
 /* Navigation */
 nav {
-    width: 100vw;  /* Utilise toute la largeur de la fenêtre */
-    margin: 0.5rem 0;  /* Supprime la marge auto horizontale */
+    width: 100vw;  
+    margin: 0.5rem 0;  
     padding: 1rem 0;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 30px;
     text-align: center;
-    box-sizing: border-box; /* Inclut padding dans la largeur */
+    box-sizing: border-box; 
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -82,7 +82,7 @@ nav a:hover {
 
 
 
-/* Hero Section : important partie */
+/* Hero Section*/
 .page-hero {
     text-align: center;
     padding: 8rem 2rem;
@@ -506,7 +506,7 @@ a:hover {
 
 
 .input_box {
-    position: relative; /* nécessaire pour que l’absolu de l’œil fonctionne */
+    position: relative; 
     margin: 20px 0;
   }
   
@@ -582,7 +582,7 @@ input:disabled {
 .remember-me {
   display: flex;
   align-items: center;
-  gap: 5px; /* Espace entre la case et le texte */
+  gap: 5px; 
   align-self: flex-start; 
 white-space: nowrap; 
 }
